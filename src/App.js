@@ -23,16 +23,18 @@ import PCB3dStill from "./Data/Phyical Prototyping/PCB_3d_still.png"
 import PCBasGraphic from "./Data/Phyical Prototyping/PCB_nice_graphic.png"
 import cicadaPrototype from "./Data/Phyical Prototyping/Prototype Cicada.png"
 import PDFlogo from "./Data/PDFLogo.png"
+import linkedInLogo from "./Data/linkedIn Logo.png"
 
 const cicadaArray =[
   cicada1, cicada2, cicada3, cicada4
 ]
-const arduinoArray =[
-  
-]
-
+/* 
+  <div className='small basic-card borderless no-background'style={{border: 'solid 5px '+ myColor}}>
+    <Graphic graphic={CNCscreenshot}/>
+  </div>
+*/
 const PDFLink = "https://secureservercdn.net/160.153.138.243/8z7.037.myftpupload.com/wp-content/uploads/2022/10/Portfolio2022-as-pdf-2022-HQ.pdf"
-
+const linkedINLink = "https://www.linkedin.com/in/larsudraabstegn/"
 const myColor = " #e576b1'"
 
 const openInNewTab = url => {
@@ -84,7 +86,7 @@ function App() {
         <img className="graphic" src={gitQR} alt={'no load'} onClick={() => openInNewTab('https://github.com/lpjc')} style={{cursor: "pointer"}}/>
       </div>
 
-      <div className='large basic-card borderless no-background' style={{padding: "140pt", display: "flex", flexDirection: "column"}}>
+      <div className='large basic-card borderless no-background' style={{padding: "15%", display: "flex", flexDirection: "column"}}>
         <Graphic graphic={logo}/>
       </div>
 
@@ -131,7 +133,6 @@ function App() {
         <Graphic graphic={cicadaBeam}/>
       </div>
 
-
       <div className='small basic-card borderless pulsehover'>
         <Graphic  graphic={arduinoPicture}/>
       </div>
@@ -140,21 +141,20 @@ function App() {
         <img className='side2side' src={catJourney} alt={'no load'} style={{objectFit: "cover"}} />
       </div>
 
-      <div className='small basic-card borderless no-background'style={{border: 'solid 5px '+ myColor}}>
-        <Graphic graphic={CNCscreenshot}/>
-      </div>
-
-      <div className='wide basic-card'> 
-        <Graphic graphic={kinect}/>
-      </div>
-
-      <div className='wide basic-card borderless overlay' style={{fontSize: "15pt", color: "#2d2222"}}> 
-        Help me expand the portfolio:<br></br>
+      <div className='overlay' style={{color: "#2d2222"}}> 
+     
         lars.pjc@gmail.com <br></br>
         +45 4053 1848
+      
+        <div style={{height: "inherit", width: "inherit"}}>
+          <img src={linkedInLogo} alt={'no load'} 
+            style={{maxHeight: "50px", width: "auto", paddingLeft: "15px", cursor: "pointer",}} 
+            onClick={() => openInNewTab(linkedINLink)}
+          />
+        </div>
       </div>
 
-      work in progress ... 
+      to be continued ...
 
     </div>
 

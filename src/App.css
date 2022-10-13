@@ -7,7 +7,7 @@
   gap: 5pt;
   grid-auto-flow: dense;
   background: linear-gradient(135deg, rgba(255,255,254,1) 0%, #fff7ce 100%); 
-  background-size: 150% 150%;
+  background-size: 200% 200%;
 	animation: gradientBackground 5s ease infinite;
 }
 
@@ -23,13 +23,29 @@
 }
 
 .overlay{
-  z-index: 1; 
   position: fixed;
   text-align: right;
-  height: 90px;
-  width: 300px;
+  border: solid 5px transparent;
+  border-radius: 10px;
+  padding: 10px;
+  height: auto;
+  width: auto;
+  min-width: 170px;
   bottom: 10px;
   right: 10px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+
+  font-family: "Flama book";
+  font-size: "15pt";
+
+  background: linear-gradient(135deg, rgb(247, 196, 251) 0%, #ceffcf 100%); 
+  background-size: 400% 400%;
+  animation: gradientBackground 4s ease infinite;
+  z-index: 100; 
 }
 
 .fit-content{
@@ -78,6 +94,13 @@
   background-color: #e576b1;
   grid-column-end: span 1;
   grid-row-end: span 1;
+  aspect-ratio: 1;
+}
+
+.tiny{
+  background-color: #76e5dc;
+  grid-column-end: span 50%;
+  grid-row-end: span 50%;
   aspect-ratio: 1;
 }
 
@@ -168,7 +191,7 @@
 
 .hinge {
   z-index: 1;
-  animation: hinge 10s;
+  animation: hinge 8s;
   animation-delay: 5s;
   animation-fill-mode: forwards;
   animation-iteration-count: infinite;
@@ -198,13 +221,13 @@
 
 @keyframes gradientBackground {
 	0% {
-		background-position: 0% 50%;
+		background-position: 2% 50%;
 	}
 	50% {
-		background-position: 100% 50%;
+		background-position: 98% 50%;
 	}
 	100% {
-		background-position: 0% 50%;
+		background-position: 2% 50%;
 	}
 }
 @keyframes infiteFlip {
@@ -266,7 +289,7 @@
     transform-origin: top left;
     transform: rotate(45deg)
   }
-  60%{
+  50%{
     transform-origin: top left;
     transform: rotate(45deg)
   }

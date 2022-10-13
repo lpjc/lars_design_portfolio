@@ -11,3 +11,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@font-face {
+  font-family: "Flama";
+  src: local("Flama"),
+   url("./Data/fonts/Flama-Bold.otf") format("otf");
+  font-weight: bold;
+  }
