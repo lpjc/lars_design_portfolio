@@ -148,7 +148,7 @@ function App() {
         <Graphic graphic={kinect}/>
       </div>
 
-      <div className='wide basic-card borderless overlay' style={{fontSize: "15pt"}}> 
+      <div className='wide basic-card borderless overlay' style={{fontSize: "15pt", color: "#2d2222"}}> 
         Help me expand the portfolio:<br></br>
         lars.pjc@gmail.com <br></br>
         +45 4053 1848
