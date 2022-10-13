@@ -27,6 +27,9 @@ import PDFlogo from "./Data/PDFLogo.png"
 const cicadaArray =[
   cicada1, cicada2, cicada3, cicada4
 ]
+const arduinoArray =[
+  
+]
 
 const PDFLink = "https://secureservercdn.net/160.153.138.243/8z7.037.myftpupload.com/wp-content/uploads/2022/10/Portfolio2022-as-pdf-2022-HQ.pdf"
 
@@ -77,7 +80,7 @@ function App() {
   return (
     <div className="wrapper">
 
-      <div className='small basic-card no-background'>
+      <div className='small basic-card no-background borderless'>
         <img className="graphic" src={gitQR} alt={'no load'} onClick={() => openInNewTab('https://github.com/lpjc')} style={{cursor: "pointer"}}/>
       </div>
 
@@ -94,27 +97,10 @@ function App() {
       </div>
       
       <div className='high basic-card borderless no-background' style={{padding: "10%"}}>
-        <Graphic graphic={digitalSkills}/>
+        <img className="graphic" src={digitalSkills} alt={'no load'}/>
       </div>
 
-      <div className='small basic-card borderless pulsehover'>
-        <Graphic graphic={arduinoPicture}/>
-      </div>
-
-      <div className='wide basic-card borderless'>
-        <img src={cicadaPrototype} alt={'no load'} style={{objectFit: "cover", flex: "1"}} />
-      </div>
-
-      <div className='large basic-card no-background borderless' style={{padding: "15%"}}>
-        <Graphic graphic={physicalSkills}/>
-      </div>
-
-      <div className='small basic-card borderless no-background' style={{overflow: "visible"}}>
-        <div className='small basic-card hinge' style={{cursor: "pointer"}}/>
-
-      </div>
-
-      <div className='small basic-card borderless rainbowBackground' style={{backgroundColor:"beige", perspective:"300px"}}>
+      <div className='small basic-card ' style={{backgroundColor:"beige", perspective:"300px"}}>
         <div className='flip-container'  style={{fontSize: "40pt", textAlign:"center"}}>
           <div className='front'  style={{padding: "10%"}}>
             <Graphic graphic={PCB3dStill}/>
@@ -125,23 +111,36 @@ function App() {
         </div>
       </div>
 
-      <div className='small basic-card no-background' style={{cursor: "pointer"}}>
-        <img className="graphic" src={PDFlogo} alt={'no load'} onClick={() => openInNewTab(PDFLink)}/>
-      </div>
-      
       <div className='wide basic-card borderless'>
         <Slideshow imageArray={cicadaArray} flex={1}/>
       </div>
 
-      <div className='small basic-card borderless'style={{border: 'solid 5px '+ myColor}}>
+      <div className='large basic-card no-background borderless' style={{padding: "15%"}}>
+        <Graphic graphic={physicalSkills}/>
+      </div>
+
+      <div className='small basic-card no-background hinge' style={{cursor: "pointer", zIndex: "10",overflow: "hidden"}}>
+          <img className="graphic " src={PDFlogo} alt={'no load'} onClick={() => openInNewTab(PDFLink)}/>
+      </div>
+
+      <div className='wide basic-card borderless'>
+        <img className= "kenburns" src={cicadaPrototype} alt={'no load'} style={{objectFit: "cover", flex: "1"}} />
+      </div>
+
+      <div className='small basic-card borderless wriggle'style={{border: 'solid 5px '+ myColor}}>
         <Graphic graphic={cicadaBeam}/>
+      </div>
+
+
+      <div className='small basic-card borderless pulsehover'>
+        <Graphic  graphic={arduinoPicture}/>
       </div>
 
       <div className='wide basic-card borderless'>
         <img className='side2side' src={catJourney} alt={'no load'} style={{objectFit: "cover"}} />
       </div>
 
-      <div className='small basic-card'style={{border: 'solid 5px '+ myColor}}>
+      <div className='small basic-card borderless no-background'style={{border: 'solid 5px '+ myColor}}>
         <Graphic graphic={CNCscreenshot}/>
       </div>
 
@@ -155,7 +154,7 @@ function App() {
         +45 4053 1848
       </div>
 
-      this site is work in eternal progress...
+      work in progress ... 
 
     </div>
 
