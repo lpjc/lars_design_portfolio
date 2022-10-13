@@ -81,9 +81,8 @@ function App() {
         <img className="graphic" src={gitQR} alt={'no load'} onClick={() => openInNewTab('https://github.com/lpjc')} style={{cursor: "pointer"}}/>
       </div>
 
-      <div className='large basic-card borderless no-background' style={{padding: "200pt", display: "flex", flexDirection: "column"}}>
+      <div className='large basic-card borderless no-background' style={{padding: "140pt", display: "flex", flexDirection: "column"}}>
         <Graphic graphic={logo}/>
-        Graduate portfolio '22
       </div>
 
       <div className='wide basic-card borderless'>
@@ -110,8 +109,9 @@ function App() {
         <Graphic graphic={physicalSkills}/>
       </div>
 
+      <div className='small basic-card borderless no-background' style={{overflow: "visible"}}>
+        <div className='small basic-card hinge' style={{cursor: "pointer"}}/>
 
-      <div className='small basic-card hinge' style={{cursor: "pointer"}}>
       </div>
 
       <div className='small basic-card borderless rainbowBackground' style={{backgroundColor:"beige", perspective:"300px"}}>
