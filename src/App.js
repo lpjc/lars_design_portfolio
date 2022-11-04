@@ -16,7 +16,8 @@ import digitalSkills from "./Data/Web Applicaiton/digitalskills.png"
 import WebcamWizard from "./Data/Web Applicaiton/WebcamWizard.mp4"
 import cicadaBeam from "./Data/Phyical Prototyping/closeup_on_beam.JPG"
 import catJourney from "./Data/Web Applicaiton/figma cat journey.png"
-import kinect from "./Data/Web Applicaiton/Kinect 2.png"
+import kinect from "./Data/Web Applicaiton/Kinect.png"
+import kinect2 from "./Data/Web Applicaiton/Kinect 2.png"
 import catStill from "./Data/Web Applicaiton/Cat_App_still.png"
 import gitQR from "./Data/Web Applicaiton/GitHub_QR.png"
 import PCB3dStill from "./Data/Phyical Prototyping/PCB_3d_still.png"
@@ -40,6 +41,18 @@ const myColor = " #e576b1'"
 const openInNewTab = url => {
   window.open(url, '_blank', 'noopener,noreferrer');
 };
+
+// Create the observer
+const observer = new IntersectionObserver(entries => {
+// Loop over the entries
+  entries.forEach(entry => {
+    // If the element is visible
+    if (entry.isIntersecting) {
+      // Add the animation class
+      entry.target.classList.add(' pulse');
+    }
+  });
+});
 
 function Slideshow(props) {
   console.log('content card loaded');
@@ -94,7 +107,7 @@ function App() {
         <Videocard video={WebcamWizard}/>
       </div>
 
-      <div className='high basic-card borderless pulse'>
+      <div className='cat high basic-card borderless pulse'>
         <img className="graphic" src={catStill} alt={'no load'}/>
       </div>
       
@@ -111,6 +124,10 @@ function App() {
            <Graphic graphic={PCBasGraphic}/>
           </div>
         </div>
+      </div>
+
+      <div className='wide basic-card ' style={{backgroundColor:"beige", perspective:"300px"}}>
+           <Graphic graphic={kinect}/>
       </div>
 
       <div className='wide basic-card borderless'>
