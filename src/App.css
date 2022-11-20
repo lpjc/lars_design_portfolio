@@ -1,15 +1,51 @@
 * { box-sizing: border-box; }
+:root {
+  --margin:5%;
+  --test-border:  border: solid salmon 3px ;
+}
 
 .wrapper {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  padding: 15pt;
-  gap: 15pt;
-  grid-auto-flow: dense;
-  background: linear-gradient(135deg, rgba(255,255,254,1) 0%, #fff7ce 100%); 
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ffead4 0%, #f9f3d3 100%); 
   background-size: 200% 200%;
 	animation: gradientBackground 5s ease infinite;
 }
+
+.outer-container {
+  display: flex;
+  border: solid salmon 3px ;
+  border-radius: 5px;
+  width: 100vw;
+  height: 100px;
+}
+.sidebyside{
+  flex-direction: row;
+}
+.inner-container{
+  display: flex;
+  align-items: center;
+  flex: 1 1 0;
+  border: solid 5px;
+  border-radius: 10px;
+}
+.right-align{
+  justify-content: end;
+}
+.left-align{
+  justify-content: start;
+}
+.center-align{
+  justify-content: center;
+}
+.test-content{
+  height: 50%;
+  background-color: #fc7474;
+  width: 50%;
+  margin: var(--margin);
+}
+
 
 .basic-card{
   background-color: #070406;
@@ -216,7 +252,7 @@
 }
 /* if screen smaller than 600px*/
 @media (max-width: 600px) {
-  .wrapper { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
+  .wrapper { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
 }
 
 @keyframes gradientBackground {
