@@ -25,6 +25,8 @@ import PCBasGraphic from "./Data/Phyical Prototyping/PCB_nice_graphic.png"
 import cicadaPrototype from "./Data/Phyical Prototyping/Prototype Cicada.png"
 import PDFlogo from "./Data/PDFLogo.png"
 import linkedInLogo from "./Data/linkedIn Logo.png"
+import { width } from '@mui/system';
+import { AspectRatio } from '@mui/joy';
 
 const cicadaArray =[
   cicada1, cicada2, cicada3, cicada4
@@ -45,23 +47,74 @@ const openInNewTab = url => {
 function App() {
   return (
     <div className="wrapper">
-      <div className='outer-container'></div>
-      <div className='outer-container sidebyside'>
-        <div className='inner-container right-align'>
-          <div className='test-content'></div>
+
+      <div className='outer-container fullscreen'style={{
+      justifyContent: "center"
+        }}>
+        <div className='inner-container' style={{
+          maxHeight: "120px",
+          maxWidth: "120px",
+          margin: "4%",
+          marginRight: "0",
+         
+        }}>
+          Logo
         </div>
-        <div className='inner-container left-align'>
-          <div className='test-content'></div>
+        <div className='inner-container' style={{
+          maxHeight: "120px",
+          margin: "4%",
+          marginLeft: "1%",
+          padding: "5px"
+        }}>
+         Text
+        </div>
+        <div className='inner-container'style={{
+            justifySelf: "center",
+            justifyContent: "center",
+            flexDirection: "column",
+            position: "absolute",
+            height: "400px",
+            top: "30%",
+            minWidth: "350px",
+        }}>
+        <button className='test-content button light' > Personality </button>
+        <button className='test-content button dark' > Projects </button>
         </div>
       </div>
-      <div className='outer-container'>
-      <div className='inner-container right-align'>
+      <div className='banner'>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none" width="100%" height="100%">
+          <path width="100%" height="100%" stroke="black" stroke-width="20" stroke-linecap="round" fill="#0099ff" fill-opacity="0" preserveAspectRatio="none" 
+            d="M0,256L48,224C96,192,192,128,288,128C384,128,480,192,576,229.3C672,267,768,277,864,288C960,299,1056,309,1152,304C1248,299,1344,277,1392,266.7L1440,256 L1392Z"></path>
+        </svg>
+        
+      </div>
+      <div className='outer-container sidebyside'>
+        <div className='inner-container right-align'>
           <div className='test-content'></div>
         </div>
         <div className='inner-container center-align'>
           <div className='test-content'></div>
         </div>
       </div>
+
+      <div className='outer-container sidebyside'>
+        <div className='inner-container center-align'>
+          <div className='test-content'></div>
+        </div>
+        <div className='inner-container left-align'>
+          <div className='test-content'></div>
+        </div>
+      </div>
+
+      <div className='outer-container sidebyside'>
+        <div className='inner-container right-align'>
+          <div className='test-content'></div>
+        </div>
+        <div className='inner-container center-align'>
+          <div className='test-content'></div>
+        </div>
+      </div>
+
       <div className='outer-container'></div>
 
     </div>
