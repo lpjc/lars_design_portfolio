@@ -31,6 +31,8 @@ import { AspectRatio } from '@mui/joy';
 const cicadaArray =[
   cicada1, cicada2, cicada3, cicada4
 ]
+
+const svgPath = "M0,256L48,224C96,192,192,128,288,128C384,128,480,192,576,229.3C672,267,768,277,864,288C960,299,1056,309,1152,304C1248,299,1344,277,1392,266.7L1440,256 L1392Z"
 /* 
   <div className='small basic-card borderless no-background'style={{border: 'solid 5px '+ myColor}}>
     <Graphic graphic={CNCscreenshot}/>
@@ -81,13 +83,16 @@ function App() {
         <button className='test-content button dark' > Projects </button>
         </div>
       </div>
-      <div className='banner'>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none" width="100%" height="100%">
-          <path width="100%" height="100%" stroke="black" stroke-width="20" stroke-linecap="round" fill="#0099ff" fill-opacity="0" preserveAspectRatio="none" 
-            d="M0,256L48,224C96,192,192,128,288,128C384,128,480,192,576,229.3C672,267,768,277,864,288C960,299,1056,309,1152,304C1248,299,1344,277,1392,266.7L1440,256 L1392Z"></path>
+   <div className='outer-container' style={{position: "relative", width: "100%"}}>
+    
+   <div className="motion-demo" transform="translate(0,-100)"></div>
+   <div className="motion-demo2" transform="translate(0,-100)"></div>
+        <svg preserveAspectRatio="none" overflow="visible" transform="translate(-50,-200)"  position="absolute" display="contents" width="10%">
+          <path stroke="black" stroke-width="220" stroke-linecap="round" fill="#0099ff" fill-opacity="0" d={svgPath}></path>
         </svg>
-        
-      </div>
+
+        </div>
+ 
       <div className='outer-container sidebyside'>
         <div className='inner-container right-align'>
           <div className='test-content'></div>

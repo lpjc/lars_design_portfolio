@@ -115,6 +115,57 @@
   }
 }
 
+.svg{
+  position: absolute;
+}
+
+.motion-demo {
+  offset-path: path("M0,256L48,224C96,192,192,128,288,128C384,128,480,192,576,229.3C672,267,768,277,864,288C960,299,1056,309,1152,304C1248,299,1344,277,1392,266.7L1440,256");
+  animation: move 8000ms infinite linear;
+  width: 150px;
+  height: 150px;
+  background: cyan;
+  z-index: 1000;
+  position: absolute;
+  top: -200px;
+  left: -50px;
+  overflow: "visible";
+  border-radius: 5px;
+}
+.motion-demo2 {
+  offset-path: path("M0,256L48,224C96,192,192,128,288,128C384,128,480,192,576,229.3C672,267,768,277,864,288C960,299,1056,309,1152,304C1248,299,1344,277,1392,266.7L1440,256");
+  animation: move 8000ms infinite linear;
+  animation-delay: 1.4s;
+  width: 150px;
+  height: 150px;
+  background: cyan;
+  z-index: 1000;
+  position: absolute;
+  top: -200px;
+  left: -50px;
+  overflow: "visible";
+  border-radius: 5px;
+}
+
+@keyframes move {
+  0% {
+    offset-distance: 0%;
+  }
+  100% {
+    offset-distance: 100%;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
 .basic-card{
   background-color: #070406;
   color: #fc7474;
