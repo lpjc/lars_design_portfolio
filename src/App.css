@@ -153,17 +153,20 @@
 
 .image1 {
   position: absolute;
-  animation: moveLayersSide2Side 3s infinite ease-in-out;
+  animation: moveLayersFar0 10s infinite ease;
+  z-index: 3;
 
 }
 .image2 {
   position: absolute;
-  animation: moveLayersSide2Side 4s infinite ease-in-out;
+  animation: moveLayersFar1 10s infinite ease;
+  z-index: 2;
 
 }
 .image3 {
   position: absolute;
-  animation: moveLayersSide2Side 6s infinite ease-in-out;
+  animation: moveLayersFar2 10s infinite ease;
+  z-index: 1;
 }
 
 @keyframes moveLayersSide2Side {
@@ -171,12 +174,27 @@
   50%  { transform: translate(5px, 0); }
   to   { transform: translate(0px, 0); }    
 }
-@keyframes moveLayersUpAndDown {
+@keyframes moveLayersFar0 {
   from { transform: translate(0px,  0); }
-  50%  { transform: translate(0px, 5px); }
+  30%  { transform: translate(-3px, 0); }
+  50%  { transform: translate(-430px, 0); }
+  60%  {transform: translate(3px, 0);  }
   to   { transform: translate(0px, 0); }    
 }
-
+@keyframes moveLayersFar1 {
+  from { transform: translate(0px,  0); }
+  30%  { transform: translate(2px, 0); }
+  50%  { transform: translate(-100px, 0); }
+  60%  {transform: translate(2px, 0);  }
+  to   { transform: translate(0px, 0); }    
+}
+@keyframes moveLayersFar2 {
+  from { transform: translate(0px,  0); }
+  30%  { transform: translate(10px, 0); }
+  50%  { transform: translate(-300px, 0); }
+  60%  {transform: translate(-1px, 0);  }
+  to   { transform: translate(0px, 0); }    
+}
 @keyframes moveInFromTop {
   0% {
     transform: translateX(-100%);
