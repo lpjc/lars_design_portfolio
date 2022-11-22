@@ -5,6 +5,9 @@ import Card from '@mui/joy/Card';
 import SimpleImageSlider from "react-simple-image-slider";
 
 import logo from './Data/Lars_logo_no_border.png'
+import larsPng1 from "./Data/Misc/Artboard 1.png"
+import larsPng2 from "./Data/Misc/Artboard 1 copy.png"
+import larsPng3 from "./Data/Misc/Artboard 1 copy 2.png"
 import cicada1 from "./Data/Phyical Prototyping/Cicada_renders/mouseCicada_skraa.png"
 import cicada4 from './Data/Phyical Prototyping/Cicada_renders/cicada_gul_skraa.png'
 import cicada3 from "./Data/Phyical Prototyping/Cicada_renders/mouseCicada_side.png"
@@ -28,23 +31,14 @@ import linkedInLogo from "./Data/linkedIn Logo.png"
 import { width } from '@mui/system';
 import { AspectRatio } from '@mui/joy';
 
-const cicadaArray =[
-  cicada1, cicada2, cicada3, cicada4
+const PNGImages = [
+
 ]
 
-const svgPath = "M0,256L48,224C96,192,192,128,288,128C384,128,480,192,576,229.3C672,267,768,277,864,288C960,299,1056,309,1152,304C1248,299,1344,277,1392,266.7L1440,256 L1392Z"
-/* 
-  <div className='small basic-card borderless no-background'style={{border: 'solid 5px '+ myColor}}>
-    <Graphic graphic={CNCscreenshot}/>
-  </div>
-*/
-const PDFLink = "https://secureservercdn.net/160.153.138.243/8z7.037.myftpupload.com/wp-content/uploads/2022/10/Portfolio2022-as-pdf-2022-HQ.pdf"
-const linkedINLink = "https://www.linkedin.com/in/larsudraabstegn/"
-const myColor = " #e576b1'"
+const layeredImages = [
+  
 
-const openInNewTab = url => {
-  window.open(url, '_blank', 'noopener,noreferrer');
-};
+]
 
 function App() {
   return (
@@ -70,28 +64,45 @@ function App() {
         }}>
          Text
         </div>
-        <div className='inner-container'style={{
+        <div className='outer-container sidebyside' style={{
             justifySelf: "center",
+            alignItems: "center",
             justifyContent: "center",
-            flexDirection: "column",
             position: "absolute",
             height: "400px",
             top: "30%",
             minWidth: "350px",
         }}>
-        <button className='test-content button light' > Personality </button>
-        <button className='test-content button dark' > Projects </button>
-        </div>
-      </div>
-   <div className='outer-container' style={{position: "relative", width: "100%"}}>
-    
-   <div className="motion-demo" transform="translate(0,-100)"></div>
-   <div className="motion-demo2" transform="translate(0,-100)"></div>
-        <svg preserveAspectRatio="none" overflow="visible" transform="translate(-50,-200)"  position="absolute" display="contents" width="10%">
-          <path stroke="black" stroke-width="220" stroke-linecap="round" fill="#0099ff" fill-opacity="0" d={svgPath}></path>
-        </svg>
+          <div className='inner-container center-align'style={{
+              justifySelf: "center",
+              justifyContent: "center",
+              flexDirection: "column",
+              width: "50%",
+              height: "100%",
 
+              minWidth: "350px",
+          }}>
+            <button className='test-content button light' > Personality </button>
+            <button className='test-content button dark' > Projects </button>
+          </div>
+          <div className='inner-container center-align'style={{
+              justifySelf: "center",
+              justifyContent: "center",
+              flexDirection: "column",
+              width: "50%",
+              height: "100%",
+              top: "30%",
+              minWidth: "350px",
+          }}>
+            <div className='layer-image-container'>
+              <img className='image1' alt='no load' src={larsPng1}></img>
+              <img className='image2' alt='no load' src={larsPng2}></img>
+              <img className='image3' alt='no load' src={larsPng3}></img>
+            </div>
+          </div>
         </div>
+
+      </div>
  
       <div className='outer-container sidebyside'>
         <div className='inner-container right-align'>

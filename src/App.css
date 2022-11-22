@@ -19,7 +19,7 @@
 
 .outer-container {
   display: flex;
-  border: solid salmon 3px ;
+  border: dashed salmon 1px ;
   border-radius: 5px;
   width: 100vw;
   height: 150px;
@@ -34,7 +34,7 @@
   display: flex;
   align-items: center;
   flex: 1 1 0;
-  border: solid 5px;
+  border: dashed 1px ;
   border-radius: 10px;
 }
 .fullscreen{
@@ -71,10 +71,10 @@
 
 .button {
   font-family: "Open Sans", sans-serif;
-  font-size: 16px;
+  font-size: 26px;
   letter-spacing: 2px;
-  height: 80px;
-  width: 200px;
+  height: 130px;
+  width: 400px;
   border-radius: 5px;
   text-decoration: none;
   text-transform: uppercase;
@@ -115,6 +115,29 @@
   }
 }
 
+.layer-image-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.image1 {
+  position: absolute;
+  animation: moveLayers 3s infinite linear;
+
+}
+.image2 {
+  position: absolute;
+  animation: moveLayers 4s infinite linear;
+
+}
+.image3 {
+  position: absolute;
+  animation: moveLayers 2s infinite linear;
+
+}
+
 .svg{
   position: absolute;
 }
@@ -132,30 +155,12 @@
   overflow: "visible";
   border-radius: 5px;
 }
-.motion-demo2 {
-  offset-path: path("M0,256L48,224C96,192,192,128,288,128C384,128,480,192,576,229.3C672,267,768,277,864,288C960,299,1056,309,1152,304C1248,299,1344,277,1392,266.7L1440,256");
-  animation: move 8000ms infinite linear;
-  animation-delay: 1.4s;
-  width: 150px;
-  height: 150px;
-  background: cyan;
-  z-index: 1000;
-  position: absolute;
-  top: -200px;
-  left: -50px;
-  overflow: "visible";
-  border-radius: 5px;
-}
 
-@keyframes move {
-  0% {
-    offset-distance: 0%;
-  }
-  100% {
-    offset-distance: 100%;
-  }
+@keyframes moveLayers {
+  from { transform: translate(0px,  0); }
+  50%  { transform: translate(5px, 0); }
+  to   { transform: translate(0px, 0); }    
 }
-
 
 
 
