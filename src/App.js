@@ -35,6 +35,10 @@ const PNGImages = [
 
 ]
 
+const toolLogos = [
+  linkedInLogo,
+  PDFlogo,
+]
 const layeredImages = [
 
 
@@ -104,10 +108,42 @@ function App() {
         </div>
 
       </div>      
-      
-      <div className='outer-container'>
-        Tool banner
+      <div class="slider-container">
+        <ul class="slider">
+          <li class="slider__slide">
+            <img className='tool-logo' src={PDFlogo}></img>
+          </li>
+          <li class="slider__slide">
+           <img className='tool-logo'src={linkedInLogo}></img>
+          </li>
+          <li class="slider__slide">
+            <img className='tool-logo' src={PDFlogo}></img>
+          </li>
+          <li class="slider__slide">
+            <div class="slide__content">3</div>
+          </li>
+          <li class="slider__slide">
+            <div class="slide__content">3</div>
+          </li>
+          <li class="slider__slide">
+            <img className='tool-logo' src={PDFlogo}></img>
+          </li>
+          <li class="slider__slide">
+           <img  className='tool-logo' src={linkedInLogo}></img>
+          </li>
+          <li class="slider__slide">
+            <img className='tool-logo' src={PDFlogo}></img>
+          </li>
+          <li class="slider__slide">
+            <div class="slide__content">3</div>
+          </li>
+          <li class="slider__slide">
+            <div class="slide__content">3</div>
+          </li>
+         
+        </ul>
       </div>
+        
 
       <div className='outer-container'>
         Breaker

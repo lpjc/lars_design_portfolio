@@ -151,6 +151,65 @@
   border-radius: 5px;
 }
 
+.image{
+  pointer-events: none;
+}
+.slider {
+  --slider-inner-width: 2400px;
+  --slider-speed: 30s;
+}
+
+@keyframes scroll {
+	0% { transform: translateX(-5%) ; }
+	100% { transform: translateX(calc((0px - var(--slider-inner-width)) - 5%))}
+}
+.slider {
+  -webkit-transform: translate3d(0, 0, 0);
+  animation: scroll linear infinite var(--slider-speed);
+  width: calc(2 * var(--slider-inner-width));
+  transition: animation-play-state ease 0.3s;}
+  .slider:hover {
+    animation-play-state: paused;
+  }
+
+.slider-container {
+	box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+	height: 100px;
+	position: relative;
+	width: 100%;}
+	.slider {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    justify-content: space-between;
+	}
+  
+	.slider__slide {
+		height: 100px;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(221, 129, 129);
+    border-right: solid #82a972 10px;
+  }
+    .slider__slide:hover {
+      cursor:auto;
+      transform: translate(0px,-20px);
+    }
+    .slide__content {
+      color: white;
+      font-size: 80px;
+    }
+
+.tool-logo{
+ height: 100%;
+ width: auto;
+ margin-right: 20px;
+ background-color: #76e594;
+}
+
 @media (max-width: 730px) {
   .image{
     width:200px; /* you can use % */
@@ -184,23 +243,23 @@
 }
 @keyframes moveLayersFar0 {
   from { transform: translate(0px,  0); }
-  30%  { transform: translate(-3px, 0); }
-  50%  { transform: translate(-430px, 0); }
-  60%  {transform: translate(3px, 0);  }
+  20%  { transform: translate(0px, 0); }
+  50%  { transform: translate(-530px, 0); }
+  80%  {transform: translate(20px, 0);  }
   to   { transform: translate(0px, 0); }    
 }
 @keyframes moveLayersFar1 {
   from { transform: translate(0px,  0); }
-  30%  { transform: translate(2px, 0); }
-  50%  { transform: translate(-100px, 0); }
-  60%  {transform: translate(2px, 0);  }
+  20%  { transform: translate(0px, 0); }
+  50%  { transform: translate(-350px, 0); }
+  80%  {transform: translate(15px, 0);  }
   to   { transform: translate(0px, 0); }    
 }
 @keyframes moveLayersFar2 {
   from { transform: translate(0px,  0); }
-  30%  { transform: translate(10px, 0); }
-  50%  { transform: translate(-300px, 0); }
-  60%  {transform: translate(-1px, 0);  }
+  20%  { transform: translate(0px, 0); }
+  50%  { transform: translate(-230px, 0); }
+  80%  {transform: translate(10px, 0);  }
   to   { transform: translate(0px, 0); }    
 }
 @keyframes moveInFromTop {
