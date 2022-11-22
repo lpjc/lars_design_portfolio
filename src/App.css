@@ -19,6 +19,7 @@
 
 .outer-container {
   display: flex;
+  justify-content: center;
   border: dashed salmon 1px ;
   border-radius: 5px;
   width: 100vw;
@@ -36,7 +37,21 @@
   flex: 1 1 0;
   border: dashed 1px ;
   border-radius: 10px;
+  margin: var(--margin);
 }
+
+.mosaic-container{
+  display: flex;
+  flex: 1 1 0;
+}
+
+.row{
+  flex-direction: row;
+}
+.column{
+  flex-direction: column;
+}
+
 .fullscreen{
   min-height: 100vh;
 }
@@ -49,13 +64,6 @@
 .center-align{
   justify-content: center;
 }
-.top-aling{
-  
-}
-
-.mainButton{
-  
-}
 
 @media (max-width: 600px) {
   .sidebyside { flex-direction: column; }
@@ -67,6 +75,9 @@
   background-color: #fc7474;
   width: 50%;
   margin: var(--margin);
+  display: flex;
+  justify-content: inherit;
+  align-items: inherit;
 }
 
 .button {
@@ -119,24 +130,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
 
-.image1 {
-  position: absolute;
-  animation: moveLayers 3s infinite linear;
-
-}
-.image2 {
-  position: absolute;
-  animation: moveLayers 4s infinite linear;
-
-}
-.image3 {
-  position: absolute;
-  animation: moveLayers 2s infinite linear;
-
-}
 
 .svg{
   position: absolute;
@@ -156,25 +151,42 @@
   border-radius: 5px;
 }
 
-@keyframes moveLayers {
+.image1 {
+  position: absolute;
+  animation: moveLayersSide2Side 3s infinite ease-in-out;
+
+}
+.image2 {
+  position: absolute;
+  animation: moveLayersSide2Side 4s infinite ease-in-out;
+
+}
+.image3 {
+  position: absolute;
+  animation: moveLayersSide2Side 6s infinite ease-in-out;
+}
+
+@keyframes moveLayersSide2Side {
   from { transform: translate(0px,  0); }
   50%  { transform: translate(5px, 0); }
   to   { transform: translate(0px, 0); }    
 }
+@keyframes moveLayersUpAndDown {
+  from { transform: translate(0px,  0); }
+  50%  { transform: translate(0px, 5px); }
+  to   { transform: translate(0px, 0); }    
+}
 
-
-
-
-
-
-
-
-
+@keyframes moveInFromTop {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }  
+}
 
 .basic-card{
-  background-color: #070406;
-  color: #fc7474;
-  border: solid 5px;
   border-radius: 10px;
   height: 100%;
   display: flex;
@@ -185,7 +197,6 @@
     display: inline-block;
     width: 100%;
     height: 100%;
-   
 }
 
 svg {

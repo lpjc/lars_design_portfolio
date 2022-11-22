@@ -36,7 +36,7 @@ const PNGImages = [
 ]
 
 const layeredImages = [
-  
+
 
 ]
 
@@ -54,7 +54,8 @@ function App() {
           marginRight: "0",
          
         }}>
-          Logo
+          
+          <img className='basic-card graphic' src={logo} alt="logo not loaded"></img>
         </div>
         <div className='inner-container' style={{
           maxHeight: "120px",
@@ -62,7 +63,7 @@ function App() {
           marginLeft: "1%",
           padding: "5px"
         }}>
-         Text
+         Her står der tekst
         </div>
         <div className='outer-container sidebyside' style={{
             justifySelf: "center",
@@ -102,36 +103,93 @@ function App() {
           </div>
         </div>
 
+      </div>      
+      
+      <div className='outer-container'>
+        Tool banner
       </div>
- 
-      <div className='outer-container sidebyside'>
-        <div className='inner-container right-align'>
-          <div className='test-content'></div>
-        </div>
-        <div className='inner-container center-align'>
-          <div className='test-content'></div>
-        </div>
+
+      <div className='outer-container'>
+        Breaker
+      </div>
+
+      <div className='outer-container'>
+        Header 
       </div>
 
       <div className='outer-container sidebyside'>
+        <div className='inner-container right-align'>
+          <div className='test-content'> Tekst </div>
+        </div>
         <div className='inner-container center-align'>
-          <div className='test-content'></div>
+          <div className='test-content'> Grafik </div>
+        </div>
+      </div>
+      <div className='outer-container'>
+        Breaker
+      </div>
+      <div className='outer-container sidebyside'>
+        <div className='inner-container center-align'>
+          <div className='test-content'> Grafi </div>
         </div>
         <div className='inner-container left-align'>
-          <div className='test-content'></div>
+          <div className='test-content'> Tekst </div>
         </div>
       </div>
-
+      <div className='outer-container'>
+        Breaker
+      </div>
       <div className='outer-container sidebyside'>
         <div className='inner-container right-align'>
-          <div className='test-content'></div>
+          <div className='test-content'> Tekst </div>
         </div>
         <div className='inner-container center-align'>
-          <div className='test-content'></div>
+          <div className='test-content'> Grafik </div>
+        </div>
+      </div>
+      <div className='outer-container'>
+        Breaker
+      </div>
+      <div className='outer-container'>
+        Header
+      </div>
+      <div className='outer-container'>
+        Project Card
+      </div>
+      <div className='outer-container sidebyside'>
+        <div className='inner-container right-align'> Tekst </div>
+        <div className='inner-container center-align'> Billde/video</div>
+      </div>
+      <div className='outer-container'>
+        Breaker
+      </div>
+      <div className='outer-container sidebyside'>
+        <div className='inner-container center-align'> Billde/video</div>
+        <div className='inner-container center-align'> Billde/video</div>
+        <div className='inner-container center-align'> Billde/video</div>
+      </div>
+      <div className='outer-container'>
+        Breaker
+      </div>
+      <div className='outer-container'>
+        Project Card
+      </div>
+      <div className='outer-container'>
+        Breaker
+      </div>
+      <div className='outer-container sidebyside'>
+        <div className='inner-container right-align'>Tekst </div>
+        <div className='mosaic-container row'> 
+          <div className='mosaic-container column'> 
+            <div className='inner-container center-align'> Billde/video</div>
+            <div className='inner-container center-align'> Billde/video</div>
+            <div className='inner-container center-align'> Billde/video</div>
+          </div>
+          <div className='inner-container center-align'> Billde/video</div>
+        
         </div>
       </div>
 
-      <div className='outer-container'></div>
 
     </div>
 
