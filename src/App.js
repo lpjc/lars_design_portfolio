@@ -96,9 +96,9 @@ function App() {
               minWidth: "350px",
           }}>
             <div className='layer-image-container'>
-              <img className='image1' alt='no load' src={larsPng1}></img>
-              <img className='image2' alt='no load' src={larsPng2}></img>
-              <img className='image3' alt='no load' src={larsPng3}></img>
+              <img className='image image1' alt='no load' src={larsPng1}></img>
+              <img className='image image2' alt='no load' src={larsPng2}></img>
+              <img className='image image3' alt='no load' src={larsPng3}></img>
             </div>
           </div>
         </div>

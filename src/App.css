@@ -65,7 +65,7 @@
   justify-content: center;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 730px) {
   .sidebyside { flex-direction: column; }
 
 }
@@ -151,10 +151,18 @@
   border-radius: 5px;
 }
 
+@media (max-width: 730px) {
+  .image{
+    width:200px; /* you can use % */
+    right: 0;
+  }
+}
+
 .image1 {
   position: absolute;
   animation: moveLayersFar0 10s infinite ease;
   z-index: 3;
+  transform: scale(0.5);
 
 }
 .image2 {
