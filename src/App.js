@@ -30,6 +30,7 @@ import PDFlogo from "./Data/PDFLogo.png"
 import linkedInLogo from "./Data/linkedIn Logo.png"
 import { width } from '@mui/system';
 import { AspectRatio } from '@mui/joy';
+import {useRef} from 'react';
 
 const PNGImages = [
 
@@ -41,12 +42,18 @@ const toolLogos = [
   linkedInLogo,
   PDFlogo,
 ]
-const layeredImages = [
 
 
-]
+
+
 
 function App() {
+  
+  function scrollToSection(id){
+    const element = document.getElementById(id);
+    element.scrollIntoView({behavior:"smooth"});
+  }
+
   return (
     <div className="wrapper">
 
@@ -89,8 +96,8 @@ function App() {
 
               minWidth: "350px",
           }}>
-            <button className='test-content button light' > Personality </button>
-            <button className='test-content button dark' > Projects </button>
+            <button className='test-content button light' onClick={()=>scrollToSection("scroll2me")}> Personality </button>
+            <button className='test-content button dark' onClick={()=>scrollToSection("scroll2me")}> Projects </button>
           </div>
           <div className='inner-container center-align'style={{
               justifySelf: "center",
@@ -191,7 +198,7 @@ function App() {
       <div className='outer-container'>
         Breaker
       </div>
-      <div className='outer-container sidebyside'>
+      <div id="scroll2me" className='outer-container sidebyside'>
         <div className='inner-container right-align'>Tekst </div>
         <div className='mosaic-container row'> 
           <div className='mosaic-container column'> 
