@@ -84,8 +84,8 @@
   font-family: "Open Sans", sans-serif;
   font-size: 26px;
   letter-spacing: 2px;
-  height: 130px;
-  width: 400px;
+  height: 100px;
+  width: 330px;
   border-radius: 5px;
   text-decoration: none;
   text-transform: uppercase;
@@ -133,75 +133,57 @@
 }
 
 
-.svg{
+svg{
   position: absolute;
+  top: -100px;
+  left: -200px;
+  overflow: visible; 
+  transform:"translate(-1000,-100)";  
+  width:"10%";
+  z-index: 5;
+  
 }
 
 .motion-demo {
-  offset-path: path("M0,256L48,224C96,192,192,128,288,128C384,128,480,192,576,229.3C672,267,768,277,864,288C960,299,1056,309,1152,304C1248,299,1344,277,1392,266.7L1440,256");
+  offset-path: path("M0.5 255C0.5 255 221 5.49972 406 0.999967C591 -3.49978 658.5 150 828 197C997.5 244 1357.81 262.662 1453 255C1614.5 242 1888.83 192.666 2059 161.5");
   animation: move 8000ms infinite linear;
   width: 150px;
   height: 150px;
   background: cyan;
   z-index: 1000;
   position: absolute;
-  top: -200px;
-  left: -50px;
+  top: -100px;
+  left: -200px;
   overflow: "visible";
   border-radius: 5px;
+}
+.motion-demo:nth-of-type(1) {
+  animation: move 8000ms 2s infinite linear;
+}
+.motion-demo:nth-of-type(2) {
+  animation: move 8000ms 3s infinite linear;
+}
+.motion-demo:nth-of-type(3) {
+  animation: move 8000ms 4s infinite linear;
+}
+.motion-demo:nth-of-type(4) {
+  animation: move 8000ms 5s infinite linear;
+}
+
+
+@keyframes move {
+  0% {
+    offset-distance: 0%;
+  }
+  100% {
+    offset-distance: 100%;
+  }
 }
 
 .image{
   pointer-events: none;
-}
-.slider {
-  --slider-inner-width: 2400px;
-  --slider-speed: 30s;
-}
-
-@keyframes scroll {
-	0% { transform: translateX(-5%) ; }
-	100% { transform: translateX(calc((0px - var(--slider-inner-width)) - 5%))}
-}
-.slider {
-  -webkit-transform: translate3d(0, 0, 0);
-  animation: scroll linear infinite var(--slider-speed);
-  width: calc(2 * var(--slider-inner-width));
-  transition: animation-play-state ease 0.3s;}
-  .slider:hover {
-    animation-play-state: paused;
-  }
-
-.slider-container {
-	box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-	height: 100px;
-	position: relative;
-	width: 100%;}
-	.slider {
-    display: flex;
-    align-items: center;
-    list-style: none;
-    margin: 0;
-    justify-content: space-between;
-	}
   
-	.slider__slide {
-		height: 100px;
-    flex-grow: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgb(221, 129, 129);
-    border-right: solid #82a972 10px;
-  }
-    .slider__slide:hover {
-      cursor:auto;
-      transform: translate(0px,-20px);
-    }
-    .slide__content {
-      color: white;
-      font-size: 80px;
-    }
+}
 
 .tool-logo{
  height: 100%;
@@ -212,54 +194,54 @@
 
 @media (max-width: 730px) {
   .image{
-    width:200px; /* you can use % */
+    width:200px; 
     right: 0;
   }
 }
 
+.image{
+  right: 0;
+  bottom:-10%;
+}
+
+
 .image1 {
   position: absolute;
-  animation: moveLayersFar0 10s infinite ease;
+  animation: moveLayersFar0 8s infinite ease;
   z-index: 3;
-  transform: scale(0.5);
 
 }
 .image2 {
   position: absolute;
-  animation: moveLayersFar1 10s infinite ease;
+  animation: moveLayersFar1 8s infinite ease;
   z-index: 2;
 
 }
 .image3 {
   position: absolute;
-  animation: moveLayersFar2 10s infinite ease;
+  animation: moveLayersFar2 8s infinite ease;
   z-index: 1;
 }
 
-@keyframes moveLayersSide2Side {
-  from { transform: translate(0px,  0); }
-  50%  { transform: translate(5px, 0); }
-  to   { transform: translate(0px, 0); }    
-}
 @keyframes moveLayersFar0 {
   from { transform: translate(0px,  0); }
-  20%  { transform: translate(0px, 0); }
-  50%  { transform: translate(-530px, 0); }
-  80%  {transform: translate(20px, 0);  }
+  20%  { transform: translate(0px, 0); opacity: 1}
+  50%  { transform: translate(-730px, 0); opacity: 0;}
+  80%  {transform: translate(20px, 0); opacity: 1 }
   to   { transform: translate(0px, 0); }    
 }
 @keyframes moveLayersFar1 {
   from { transform: translate(0px,  0); }
-  20%  { transform: translate(0px, 0); }
-  50%  { transform: translate(-350px, 0); }
-  80%  {transform: translate(15px, 0);  }
+  20%  { transform: translate(0px, 0); opacity: 1}
+  50%  { transform: translate(-500px, 0); opacity: 0;}
+  80%  {transform: translate(15px, 0); opacity: 1  }
   to   { transform: translate(0px, 0); }    
 }
 @keyframes moveLayersFar2 {
   from { transform: translate(0px,  0); }
-  20%  { transform: translate(0px, 0); }
-  50%  { transform: translate(-230px, 0); }
-  80%  {transform: translate(10px, 0);  }
+  20%  { transform: translate(0px, 0); opacity: 1}
+  50%  { transform: translate(-380px, 0); opacity: 0; }
+  80%  {transform: translate(10px, 0); opacity: 1; }
   to   { transform: translate(0px, 0); }    
 }
 @keyframes moveInFromTop {

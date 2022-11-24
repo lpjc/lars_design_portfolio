@@ -35,6 +35,8 @@ const PNGImages = [
 
 ]
 
+const svgPath = "M0.5 255C0.5 255 221 5.49972 406 0.999967C591 -3.49978 658.5 150 828 197C997.5 244 1357.81 262.662 1453 255C1614.5 242 1888.83 192.666 2059 161.5"
+
 const toolLogos = [
   linkedInLogo,
   PDFlogo,
@@ -99,51 +101,27 @@ function App() {
               top: "30%",
               minWidth: "350px",
           }}>
-            <div className='layer-image-container'>
+
+          </div>
+
+        </div>
+        <div className='layer-image-container'>
               <img className='image image1' alt='no load' src={larsPng1}></img>
               <img className='image image2' alt='no load' src={larsPng2}></img>
               <img className='image image3' alt='no load' src={larsPng3}></img>
             </div>
-          </div>
-        </div>
 
-      </div>      
-      <div class="slider-container">
-        <ul class="slider">
-          <li class="slider__slide">
-            <img className='tool-logo' src={PDFlogo}></img>
-          </li>
-          <li class="slider__slide">
-           <img className='tool-logo'src={linkedInLogo}></img>
-          </li>
-          <li class="slider__slide">
-            <img className='tool-logo' src={PDFlogo}></img>
-          </li>
-          <li class="slider__slide">
-            <div class="slide__content">3</div>
-          </li>
-          <li class="slider__slide">
-            <div class="slide__content">3</div>
-          </li>
-          <li class="slider__slide">
-            <img className='tool-logo' src={PDFlogo}></img>
-          </li>
-          <li class="slider__slide">
-           <img  className='tool-logo' src={linkedInLogo}></img>
-          </li>
-          <li class="slider__slide">
-            <img className='tool-logo' src={PDFlogo}></img>
-          </li>
-          <li class="slider__slide">
-            <div class="slide__content">3</div>
-          </li>
-          <li class="slider__slide">
-            <div class="slide__content">3</div>
-          </li>
-         
-        </ul>
-      </div>
-        
+      </div>   
+      <div className='outer-container' style={{position: "relative", width: "100%"}}>
+          <div className="motion-demo"></div>
+          <div className="motion-demo"></div>
+          <div className="motion-demo"></div>
+          <div className="motion-demo"></div>
+         <svg preserveAspectRatio="none">
+           <path stroke="black" stroke-width="220" stroke-linecap="round" fill="#0099ff" fill-opacity="0" d={svgPath}></path>
+         </svg>
+ 
+         </div>     
 
       <div className='outer-container'>
         Breaker
