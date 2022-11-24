@@ -67,7 +67,6 @@ function App() {
           marginRight: "0",
          
         }}>
-          
           <img className='basic-card graphic' src={logo} alt="logo not loaded"></img>
         </div>
         <div className='inner-container' style={{
@@ -99,24 +98,15 @@ function App() {
             <button className='test-content button light' onClick={()=>scrollToSection("scroll2me")}> Personality </button>
             <button className='test-content button dark' onClick={()=>scrollToSection("scroll2me")}> Projects </button>
           </div>
-          <div className='inner-container center-align'style={{
-              justifySelf: "center",
-              justifyContent: "center",
-              flexDirection: "column",
-              width: "50%",
-              height: "100%",
-              top: "30%",
-              minWidth: "350px",
-          }}>
 
-          </div>
 
         </div>
+        
         <div className='layer-image-container'>
               <img className='image image1' alt='no load' src={larsPng1}></img>
               <img className='image image2' alt='no load' src={larsPng2}></img>
               <img className='image image3' alt='no load' src={larsPng3}></img>
-            </div>
+        </div>
 
       </div>   
       <div className='outer-container' style={{position: "relative", width: "100%"}}>
@@ -124,8 +114,12 @@ function App() {
           <div className="motion-demo"></div>
           <div className="motion-demo"></div>
           <div className="motion-demo"></div>
+          <div className="motion-demo"></div>
+          <div className="motion-demo"></div>
+          <div className="motion-demo"></div>
+          <div className="motion-demo"></div>
          <svg preserveAspectRatio="none">
-           <path stroke="black" stroke-width="220" stroke-linecap="round" fill="#0099ff" fill-opacity="0" d={svgPath}></path>
+           <path stroke="#fadfc1" stroke-width="220" stroke-linecap="round" fill="#0099ff" fill-opacity="0" d={svgPath}></path>
          </svg>
  
          </div>     
