@@ -15,6 +15,10 @@
   background: linear-gradient(135deg, #ffead4 0%, #f9f3d3 100%); 
   background-size: 200% 200%;
 	animation: gradientBackground 5s ease infinite;
+  overflow: hidden;
+}
+.wrapper2 {
+  overflow: auto;
 }
 
 .outer-container {
@@ -29,8 +33,9 @@
   flex-direction: row;
 }
 @media (max-width: 600px) {
-  .sidebyside { flex-direction: column; }
+ 
 }
+
 .inner-container{
   display: flex;
   align-items: center;
@@ -65,10 +70,7 @@
   justify-content: center;
 }
 
-@media (max-width: 730px) {
-  .sidebyside { flex-direction: column; }
 
-}
 
 .test-content{
   height: 50%;
@@ -98,6 +100,7 @@
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+  z-index: 6;
 }
 
 .button:active {
@@ -106,7 +109,7 @@
   left: 5px;
 }
 .light{
-  background-color: rgb(254, 249, 226);
+  background-color: #fdecd9;
   color: #fc7474;
 }
 .light:hover{
@@ -135,7 +138,7 @@
 
 svg{
   position: absolute;
-  top: -100px;
+  top: -150px;
   left: -200px;
   overflow: visible; 
   transform:"translate(-1000,-100)";  
@@ -152,7 +155,7 @@ svg{
   background: cyan;
   z-index: 1000;
   position: absolute;
-  top: -100px;
+  top: -150px;
   left: -200px;
   overflow: "visible";
   border-radius: 5px;
@@ -169,6 +172,19 @@ svg{
 .motion-demo:nth-of-type(4) {
   animation: move 8000ms 5s infinite linear;
 }
+.motion-demo:nth-of-type(5) {
+  animation: move 8000ms 6s infinite linear;
+}
+.motion-demo:nth-of-type(6) {
+  animation: move 8000ms 7s infinite linear;
+}
+.motion-demo:nth-of-type(7) {
+  animation: move 8000ms 8s infinite linear;
+}
+.motion-demo:nth-of-type(8) {
+  animation: move 8000ms 9s infinite linear;
+}
+
 
 
 @keyframes move {
@@ -180,10 +196,6 @@ svg{
   }
 }
 
-.image{
-  pointer-events: none;
-  
-}
 
 .tool-logo{
  height: 100%;
@@ -192,19 +204,31 @@ svg{
  background-color: #76e594;
 }
 
-@media (max-width: 730px) {
-  .image{
-    width:200px; 
-    right: 0;
-  }
-}
-
 .image{
+  pointer-events: none;
   right: 0;
   bottom:-10%;
+  
 }
 
+@media (max-width: 730px) {
+  .image{
+    height: 500px; 
+    bottom:5%;
+    right: -10%;
+  }
+  .sidebyside { flex-direction: column; }
+  .button{
+    top: -45%;
+  }
+  .light{
+    background-color: #fadfc1;
+    color: #fc7474;
+  }
+}
+@media (max-width: 730px) {
 
+}
 .image1 {
   position: absolute;
   animation: moveLayersFar0 8s infinite ease;
