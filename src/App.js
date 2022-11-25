@@ -28,44 +28,76 @@ import PCBasGraphic from "./Data/Phyical Prototyping/PCB_nice_graphic.png"
 import cicadaPrototype from "./Data/Phyical Prototyping/Prototype Cicada.png"
 import PDFlogo from "./Data/PDFLogo.png"
 import linkedInLogo from "./Data/linkedIn Logo.png"
+
+import AdobeLogo from "./Data/Misc/Tool_logos/Adobe.png"
+import ArduinoLogo from "./Data/Misc/Tool_logos/Arduino.png"
+import CraftLogo from "./Data/Misc/Tool_logos/Craftsmanship.png"
+import CSSLogo from "./Data/Misc/Tool_logos/CSS.png"
+import FigmaLogo from "./Data/Misc/Tool_logos/Figma.png"
+import FusionLogo from "./Data/Misc/Tool_logos/Fusion360.png"
+import HTMLLogo from "./Data/Misc/Tool_logos/HTML.png"
+import JavaScriptLogo from "./Data/Misc/Tool_logos/JavaScript.png"
+import JiraLogo from "./Data/Misc/Tool_logos/Jira.png"
+import ProcessingLogo from "./Data/Misc/Tool_logos/Processing.png"
+import ReactLogo from "./Data/Misc/Tool_logos/React.png"
+
+
 import { width } from '@mui/system';
 import { AspectRatio } from '@mui/joy';
-import {useRef} from 'react';
-
-const PNGImages = [
-
-]
+import React, { useRef } from 'react';
 
 const svgPath = "M0.5 255C0.5 255 221 5.49972 406 0.999967C591 -3.49978 658.5 150 828 197C997.5 244 1357.81 262.662 1453 255C1614.5 242 1888.83 192.666 2059 161.5"
 
 const toolLogos = [
-  linkedInLogo,
-  PDFlogo,
-]
+    AdobeLogo,
+    ArduinoLogo,
+    CraftLogo,
+    CSSLogo,
+    FigmaLogo,
+    FusionLogo,
+    HTMLLogo,
+    JavaScriptLogo,
+    JiraLogo,
+    ProcessingLogo,
+    ReactLogo,
+  ]
+function Breaker(props) {
+  return <div className='breaker' style={{ height: props.height }}> BREAKER </div>
+}
+
+function scrollToSection(id) {
+  const element = document.getElementById(id);
+  element.scrollIntoView({ behavior: "smooth", block: "start" });
+}
 
 
 
+const logoDivs = []
 
+function populateLogos(){
+
+  for (let i = 0; i < toolLogos.length; i++) {
+    const thisLogo = toolLogos[i];
+    logoDivs.push( 
+      <div className="motion-demo logo-container"> 
+        <img class="tool-logo" src={thisLogo} alt="no logo loaded"/> 
+      </div>
+    );
+  }
+}
 
 function App() {
   
-  function scrollToSection(id){
-    const element = document.getElementById(id);
-    element.scrollIntoView({behavior:"smooth"});
-  }
-
   return (
     <div className="wrapper">
-
-      <div className='outer-container fullscreen'style={{
-      justifyContent: "center"
-        }}>
+      <div className='outer-container fullscreen' style={{
+        justifyContent: "center"
+      }}>
         <div className='inner-container' style={{
           maxHeight: "120px",
           maxWidth: "120px",
           margin: "4%",
           marginRight: "0",
-         
         }}>
           <img className='basic-card graphic' src={logo} alt="logo not loaded"></img>
         </div>
@@ -73,101 +105,86 @@ function App() {
           maxHeight: "120px",
           margin: "4%",
           marginLeft: "1%",
-          padding: "5px"
+          padding: "5px",
+          paddingBottom: "0",
+          alignItems: "end",
         }}>
-         Her står der tekst
+          Placeholder Name <br /> Placeholder Contact
         </div>
         <div className='outer-container sidebyside' style={{
-            justifySelf: "center",
-            alignItems: "center",
-            justifyContent: "center",
-            position: "absolute",
-            height: "400px",
-            top: "30%",
-            minWidth: "350px",
+          justifySelf: "center",
+          alignItems: "center",
+          justifyContent: "center",
+          position: "absolute",
+          height: "400px",
+          top: "30%",
+          minWidth: "350px",
         }}>
-          <div className='inner-container center-align'style={{
-              justifySelf: "center",
-              justifyContent: "center",
-              flexDirection: "column",
-              width: "50%",
-              height: "100%",
-
-              minWidth: "350px",
+          <div className='inner-container center-align' style={{
+            justifySelf: "center",
+            justifyContent: "center",
+            flexDirection: "column",
+            width: "50%",
+            height: "100%",
+            minWidth: "350px",
           }}>
-            <button className='test-content button light' onClick={()=>scrollToSection("scroll2me")}> Personality </button>
-            <button className='test-content button dark' onClick={()=>scrollToSection("scroll2me")}> Projects </button>
+            <button className='test-content button light' onClick={() => scrollToSection("AboutHeader")}> Personality </button>
+            <button className='test-content button dark' onClick={() => scrollToSection("ProjectsHeader")}> Projects </button>
           </div>
-
-
         </div>
-        
+
         <div className='layer-image-container'>
-              <img className='image image1' alt='no load' src={larsPng1}></img>
-              <img className='image image2' alt='no load' src={larsPng2}></img>
-              <img className='image image3' alt='no load' src={larsPng3}></img>
+          <img className='image image1' alt='no load' src={larsPng1}></img>
+          <img className='image image2' alt='no load' src={larsPng2}></img>
+          <img className='image image3' alt='no load' src={larsPng3}></img>
         </div>
 
-      </div>   
-      <div className='outer-container' style={{position: "relative", width: "100%"}}>
-          <div className="motion-demo"></div>
-          <div className="motion-demo"></div>
-          <div className="motion-demo"></div>
-          <div className="motion-demo"></div>
-          <div className="motion-demo"></div>
-          <div className="motion-demo"></div>
-          <div className="motion-demo"></div>
-          <div className="motion-demo"></div>
-         <svg preserveAspectRatio="none">
-           <path stroke="#fadfc1" stroke-width="220" stroke-linecap="round" fill="#0099ff" fill-opacity="0" d={svgPath}></path>
-         </svg>
- 
-         </div>     
-
-      <div className='outer-container'>
-        Breaker
+      </div>
+      <div className='outer-container' style={{ position: "relative", width: "100%" }}>
+        {populateLogos()}
+        {logoDivs}
+        <svg preserveAspectRatio="none">
+          <path stroke="#fc7474" stroke-width="220" stroke-linecap="round" fill="#0099ff" fill-opacity="0" d={svgPath}></path>
+        </svg>
       </div>
 
-      <div className='outer-container'>
-        Header 
-      </div>
+      <Breaker height="1000px" />
+      <div className='aboutSection'> 
+        <div id='AboutHeader' className='header aboutheader'>
+          ABOUT
+        </div>
 
-      <div className='outer-container sidebyside'>
-        <div className='inner-container right-align'>
-          <div className='test-content'> Tekst </div>
+        <div className='outer-container sidebyside'>
+          <div className='inner-container right-align'>
+            <div className='test-content'> Tekst </div>
+          </div>
+          <div className='inner-container center-align'>
+            <div className='test-content'> Grafik </div>
+          </div>
         </div>
-        <div className='inner-container center-align'>
-          <div className='test-content'> Grafik </div>
+        <Breaker height="100px" />
+        <div className='outer-container sidebyside'>
+          <div className='inner-container center-align'>
+            <div className='test-content'> Grafi </div>
+          </div>
+          <div className='inner-container left-align'>
+            <div className='test-content'> Tekst </div>
+          </div>
         </div>
-      </div>
-      <div className='outer-container'>
-        Breaker
-      </div>
-      <div className='outer-container sidebyside'>
-        <div className='inner-container center-align'>
-          <div className='test-content'> Grafi </div>
-        </div>
-        <div className='inner-container left-align'>
-          <div className='test-content'> Tekst </div>
-        </div>
-      </div>
-      <div className='outer-container'>
-        Breaker
-      </div>
-      <div className='outer-container sidebyside'>
-        <div className='inner-container right-align'>
-          <div className='test-content'> Tekst </div>
-        </div>
-        <div className='inner-container center-align'>
-          <div className='test-content'> Grafik </div>
+        <Breaker height="100px" />
+        <div className='outer-container sidebyside'>
+          <div className='inner-container right-align'>
+            <div className='test-content'> Tekst </div>
+          </div>
+          <div className='inner-container center-align'>
+            <div className='test-content'> Grafik </div>
+          </div>
         </div>
       </div>
-      <div className='outer-container'>
-        Breaker
-      </div>
-      <div className='outer-container'>
-        Header
-      </div>
+      <Breaker height="400px" />
+      <div id='ProjectsHeader' className='header aboutheader'>
+          PROJECTS
+        </div>
       <div className='outer-container'>
         Project Card
       </div>
@@ -175,37 +192,28 @@ function App() {
         <div className='inner-container right-align'> Tekst </div>
         <div className='inner-container center-align'> Billde/video</div>
       </div>
-      <div className='outer-container'>
-        Breaker
-      </div>
+      <Breaker height="100px" />
       <div className='outer-container sidebyside'>
         <div className='inner-container center-align'> Billde/video</div>
         <div className='inner-container center-align'> Billde/video</div>
         <div className='inner-container center-align'> Billde/video</div>
       </div>
-      <div className='outer-container'>
-        Breaker
-      </div>
+      <Breaker height="100px" />
       <div className='outer-container'>
         Project Card
       </div>
-      <div className='outer-container'>
-        Breaker
-      </div>
+      <Breaker height="100px" />
       <div id="scroll2me" className='outer-container sidebyside'>
         <div className='inner-container right-align'>Tekst </div>
-        <div className='mosaic-container row'> 
-          <div className='mosaic-container column'> 
+        <div className='mosaic-container row'>
+          <div className='mosaic-container column'>
             <div className='inner-container center-align'> Billde/video</div>
             <div className='inner-container center-align'> Billde/video</div>
             <div className='inner-container center-align'> Billde/video</div>
           </div>
           <div className='inner-container center-align'> Billde/video</div>
-        
         </div>
       </div>
-
-
     </div>
 
   );
