@@ -44,7 +44,7 @@ import ReactLogo from "./Data/Misc/Tool_logos/React.png"
 
 import { width } from '@mui/system';
 import { AspectRatio } from '@mui/joy';
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 
 const svgPath = "M0.5 255C0.5 255 221 5.49972 406 0.999967C591 -3.49978 658.5 150 828 197C997.5 244 1357.81 262.662 1453 255C1614.5 242 1888.83 192.666 2059 161.5"
 
@@ -86,10 +86,22 @@ function populateLogos(){
   }
 }
 
+
+
 function App() {
-  
+
+  const [alertCount, setAlertCount] = useState(0)
+ 
+  function underConstruction(){
+    if (alertCount === 0) {
+      alert("Under construction, this is live development!")
+      setAlertCount(1)    
+    }
+  }
+
   return (
     <div className="wrapper">
+      {underConstruction()}
       <div className='outer-container fullscreen' style={{
         justifyContent: "center"
       }}>
