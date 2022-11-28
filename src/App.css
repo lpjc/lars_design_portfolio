@@ -188,6 +188,15 @@ svg{
   background-color: var(--my-white);
 }
 
+.small-logo{
+  max-height: 80px;
+  aspect-ratio: 1;
+}
+.small-logo:hover{
+  max-height: 100px;
+  cursor: pointer;
+}
+
 
 .tool-logo{
   max-width: 100%;
@@ -415,9 +424,9 @@ svg{
 .x-large{
   height: 220%
 }
-
 .text-card{
-
+  background-color: var(--lighter-color);
+  color: var(--my-black);
 }
 .overlay{
   position: fixed;
@@ -427,7 +436,7 @@ svg{
   padding: 10px;
   height: auto;
   width: auto;
-  min-width: 170px;
+  min-width: auto;
   bottom: 10px;
   right: 10px;
 
@@ -439,8 +448,8 @@ svg{
   font-family: "Flama";
   font-size: "15pt";
 
-  background: linear-gradient(135deg, rgb(247, 196, 251) 0%, #ceffcf 100%); 
-  background-size: 400% 400%;
+  background: linear-gradient(135deg, var(--lighter-color) -20%, var(--light-color) 100%); 
+  background-size: 200% 200%;
   animation: gradientBackground 4s ease infinite;
   z-index: 100; 
 }

@@ -105,6 +105,9 @@ function App() {
   return (
     <div className="wrapper">
       {underConstruction()}
+      <div className='overlay'>
+        <img className='small-logo' src={linkedInLogo} alt="linkedIn Logo no laoded" onClick={()=>window.open("https://www.linkedin.com/in/larsudraabstegn/", "_blank")}></img>
+      </div>
       <div id="frontpage" className='outer-container fullscreen' style={{
         justifyContent: "center"
       }}>
@@ -174,7 +177,7 @@ function App() {
         <div className='outer-container sidebyside'>
 
           <div className='inner-container right-align'>
-            <div className='test-content'> Tekst </div>
+            <div className='test-content text-card'> Text Card Here </div>
           </div>
         
           <div className='inner-container bubble-container'>
@@ -221,7 +224,7 @@ function App() {
         <Breaker height="600px" />
         <div className='outer-container sidebyside'>
           <div className='inner-container right-align'>
-            <div className='test-content'> Tekst </div>
+            <div className='test-content text-card'> Tekst </div>
           </div>
           <div className='inner-container bubble-container'>
             <div className='bubble large bubble-layer1' style={{left: "15%", bottom: "35%"}}> 
@@ -263,7 +266,7 @@ function App() {
       </div>
       <Breaker height="100px" />
       <div id="scroll2me" className='outer-container sidebyside'>
-        <div className='inner-container right-align'>Tekst </div>
+        <div className='inner-container text-card right-align'>Tekst </div>
         <div className='mosaic-container row'>
           <div className='mosaic-container column'>
             <div className='inner-container center-align'> Billde/video</div>
