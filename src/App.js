@@ -27,7 +27,10 @@ import PCB3dStill from "./Data/Phyical Prototyping/PCB_3d_still.png"
 import PCBasGraphic from "./Data/Phyical Prototyping/PCB_nice_graphic.png"
 import cicadaPrototype from "./Data/Phyical Prototyping/Prototype Cicada.png"
 import PDFlogo from "./Data/PDFLogo.png"
+import FigJam1 from "./Data/Web Applicaiton/FigJam_table.png"
+import SeaWeed1 from "./Data/Web Applicaiton/Seaweed App.png"
 import linkedInLogo from "./Data/linkedIn Logo.png"
+import ITULogo from "./Data/Misc/ITU_logo_CPH_UK jpg.jpg"
 
 import AdobeLogo from "./Data/Misc/Tool_logos/Adobe.png"
 import ArduinoLogo from "./Data/Misc/Tool_logos/Arduino.png"
@@ -86,8 +89,6 @@ function populateLogos(){
   }
 }
 
-
-
 function App() {
 
   const [alertCount, setAlertCount] = useState(0)
@@ -102,7 +103,7 @@ function App() {
   return (
     <div className="wrapper">
       {underConstruction()}
-      <div className='outer-container fullscreen' style={{
+      <div id="frontpage" className='outer-container fullscreen' style={{
         justifyContent: "center"
       }}>
         <div className='inner-container' style={{
@@ -152,28 +153,48 @@ function App() {
         </div>
 
       </div>
-      <div className='outer-container' style={{ position: "relative", width: "100%" }}>
+      <div id="toolBanner" className='outer-container' style={{ position: "relative", width: "100%" }}>
         {populateLogos()}
         {logoDivs}
         <svg preserveAspectRatio="none">
-          <path stroke="#fc7474" stroke-width="220" stroke-linecap="round" fill="#0099ff" fill-opacity="0" d={svgPath}></path>
+          <path stroke="#fc7474" strokeWidth="220" strokeLinecap="round" fill="#0099ff" fill-opacity="0" d={svgPath}></path>
         </svg>
       </div>
 
       <Breaker height="1000px" />
+
       <div className='aboutSection'> 
         <div id='AboutHeader' className='header aboutheader'>
           ABOUT
         </div>
 
+
         <div className='outer-container sidebyside'>
+
           <div className='inner-container right-align'>
             <div className='test-content'> Tekst </div>
           </div>
-          <div className='inner-container center-align'>
-            <div className='test-content'> Grafik </div>
+        
+          <div className='inner-container bubble-container'>
+            <div className='bubble large' style={{left: "15%", bottom: "40%"}}> 
+              <img className='bubble-image wide-image side2side' alt='no load' src={SeaWeed1}/>
+            </div>
+            <div className='bubble medium' style={{left: "40%", bottom: "-50%"}}>
+              <img className='bubble-image' alt='no load' src={cicadaPrototype}/>
+            </div>
+            <div className='bubble small' style={{left: "60%", bottom: "15%"}}>
+              <img className='bubble-image' style={{objectFit: "contain", backgroundColor:"black"}}alt='no load' src={ITULogo}/>
+            </div>
+            <div className='bubble small' style={{left: "0%", bottom: "-30%"}}>
+              <img className='bubble-image' alt='no load' src={cicada1}/>
+            </div>
+
           </div>
+
         </div>
+
+
+
         <Breaker height="100px" />
         <div className='outer-container sidebyside'>
           <div className='inner-container center-align'>
