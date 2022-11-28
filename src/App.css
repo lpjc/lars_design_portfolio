@@ -178,7 +178,6 @@ svg{
   transform:"translate(-1000,-100)";  
   width:"10%";
   z-index: 5;
-  
 }
 
 .logo-container{
@@ -204,60 +203,47 @@ svg{
   position: absolute;
   top: -150px;
   left: -200px;
-  overflow: "visible";
+  overflow: visible;
   border-radius: 5px;
   font-size: large;
+}
 
-}
-.motion-demo:nth-of-type(0) {
-  animation: move var(--banner-speed)  -11s infinite linear;
-}
 .motion-demo:nth-of-type(1) {
-  animation: move var(--banner-speed)  -10s infinite linear;
+  animation: move var(--banner-speed)  -12s infinite linear;
 }
 .motion-demo:nth-of-type(2) {
-  animation: move var(--banner-speed)  -9s infinite linear;
+  animation: move var(--banner-speed)  -10s infinite linear;
 }
 .motion-demo:nth-of-type(3) {
-  animation: move var(--banner-speed)  -8s infinite linear;
+  animation: move var(--banner-speed)  -9s infinite linear;
 }
 .motion-demo:nth-of-type(4) {
-  animation: move var(--banner-speed) -7s infinite linear;
+  animation: move var(--banner-speed) -8s infinite linear;
 }
 .motion-demo:nth-of-type(5) {
-  animation: move var(--banner-speed)  -6s infinite linear;
+  animation: move var(--banner-speed)  -7s infinite linear;
 }
 .motion-demo:nth-of-type(6) {
-  animation: move var(--banner-speed)  -5s infinite linear;
+  animation: move var(--banner-speed)  -6s infinite linear;
 }
 .motion-demo:nth-of-type(7) {
-  animation: move var(--banner-speed)  -4s infinite linear;
+  animation: move var(--banner-speed)  -5s infinite linear;
 }
 .motion-demo:nth-of-type(8) {
-  animation: move var(--banner-speed)  -3s infinite linear;
+  animation: move var(--banner-speed)  -4s infinite linear;
 }
 .motion-demo:nth-of-type(9) {
-  animation: move var(--banner-speed)  -2s infinite linear;
+  animation: move var(--banner-speed)  -3s infinite linear;
 }
 .motion-demo:nth-of-type(10) {
-  animation: move var(--banner-speed)  -1s infinite linear;
+  animation: move var(--banner-speed)  -2s infinite linear;
 }
 .motion-demo:nth-of-type(11) {
   animation: move var(--banner-speed)  0s infinite linear;
 }
-.motion-demo:nth-of-type(12) {
-  animation: move var(--banner-speed)  1s infinite linear;
-}
-.motion-demo:nth-of-type(13) {
-  animation: move var(--banner-speed)  2s infinite linear;
-}
-.motion-demo:nth-of-type(14) {
-  animation: move var(--banner-speed)  3s infinite linear;
-}
-.motion-demo:nth-of-type(15) {
-  animation: move var(--banner-speed)  4s infinite linear;
-}
 
+.motion-demo:last-of-type{
+}
 
 
 
@@ -380,7 +366,7 @@ svg{
   align-items: center;
   overflow: hidden;
   filter: drop-shadow(-5px 10px 5px var(--dark-color));
-  animation: bopUpAndDown 20s infinite ease-in-out;
+
 }
 
 @keyframes bopUpAndDown {
@@ -397,6 +383,23 @@ svg{
   object-fit:cover;
 }
 
+.bubble-layer1{
+  animation: bopUpAndDown 50s infinite ease-in-out;
+  z-index: 1;
+}
+.bubble-layer2{
+  animation: bopUpAndDown 40s infinite ease-in-out;
+  z-index: 2;
+}
+.bubble-layer3{
+  animation: bopUpAndDown 20s infinite ease-in-out;
+  z-index: 3;
+}
+.bubble-layer4{
+  animation: bopUpAndDown 10s infinite ease-in-out;
+  z-index: 4;
+}
+
 .x-small{
   height: 60%
 }
@@ -404,7 +407,7 @@ svg{
   height: 80%
 }
 .medium{
-  height: 100%
+  height: 110%
 }
 .large{
   height: 150%

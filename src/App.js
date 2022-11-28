@@ -8,6 +8,7 @@ import logo from './Data/Lars_logo_no_border.png'
 import larsPng1 from "./Data/Misc/Artboard 1.png"
 import larsPng2 from "./Data/Misc/Artboard 1 copy.png"
 import larsPng3 from "./Data/Misc/Artboard 1 copy 2.png"
+import MomonaFigma from "./Data/Web Applicaiton/Momona Figma.png"
 import cicada1 from "./Data/Phyical Prototyping/Cicada_renders/mouseCicada_skraa.png"
 import cicada4 from './Data/Phyical Prototyping/Cicada_renders/cicada_gul_skraa.png'
 import cicada3 from "./Data/Phyical Prototyping/Cicada_renders/mouseCicada_side.png"
@@ -31,7 +32,7 @@ import FigJam1 from "./Data/Web Applicaiton/FigJam_table.png"
 import SeaWeed1 from "./Data/Web Applicaiton/Seaweed App.png"
 import linkedInLogo from "./Data/linkedIn Logo.png"
 import ITULogo from "./Data/Misc/ITU_logo_CPH_UK jpg.jpg"
-
+import sketching from "./Data/Misc/Sketching.jpg"
 import AdobeLogo from "./Data/Misc/Tool_logos/Adobe.png"
 import ArduinoLogo from "./Data/Misc/Tool_logos/Arduino.png"
 import CraftLogo from "./Data/Misc/Tool_logos/Craftsmanship.png"
@@ -43,7 +44,7 @@ import JavaScriptLogo from "./Data/Misc/Tool_logos/JavaScript.png"
 import JiraLogo from "./Data/Misc/Tool_logos/Jira.png"
 import ProcessingLogo from "./Data/Misc/Tool_logos/Processing.png"
 import ReactLogo from "./Data/Misc/Tool_logos/React.png"
-
+import ScancarFigma from "./Data/Web Applicaiton/ScanCar Prototype Hifi.png"
 
 import { width } from '@mui/system';
 import { AspectRatio } from '@mui/joy';
@@ -64,6 +65,7 @@ const toolLogos = [
     ProcessingLogo,
     ReactLogo,
   ]
+
 function Breaker(props) {
   return <div className='breaker' style={{ height: props.height }}> BREAKER </div>
 }
@@ -176,41 +178,65 @@ function App() {
           </div>
         
           <div className='inner-container bubble-container'>
-            <div className='bubble large' style={{left: "15%", bottom: "40%"}}> 
-              <img className='bubble-image wide-image side2side' alt='no load' src={SeaWeed1}/>
+            <div className='bubble large bubble-layer1' style={{left: "15%", bottom: "35%"}}> 
+              <img className='bubble-image wide-image' alt='no load' src={ScancarFigma}/>
             </div>
-            <div className='bubble medium' style={{left: "40%", bottom: "-50%"}}>
-              <img className='bubble-image' alt='no load' src={cicadaPrototype}/>
+            <div className='bubble medium bubble-layer2' style={{left: "40%", bottom: "-65%"}}>
+              <img className='bubble-image' alt='no load' src={sketching}/>
             </div>
-            <div className='bubble small' style={{left: "60%", bottom: "15%"}}>
-              <img className='bubble-image' style={{objectFit: "contain", backgroundColor:"black"}}alt='no load' src={ITULogo}/>
+            <div className='bubble small bubble-layer3' style={{left: "60%", bottom: "10%"}}>
+              <img className='bubble-image' style={{objectFit: "contain", backgroundColor:"black"}} 
+              alt='no load' src={ITULogo}/>
             </div>
-            <div className='bubble small' style={{left: "0%", bottom: "-30%"}}>
-              <img className='bubble-image' alt='no load' src={cicada1}/>
+            <div className='bubble small bubble-layer4' style={{left: "0%", bottom: "-30%"}}>
+              <img className='bubble-image side2side' alt='no load' src={SeaWeed1}/>
             </div>
-
           </div>
 
         </div>
 
 
 
-        <Breaker height="100px" />
+        <Breaker height="600px" />
         <div className='outer-container sidebyside'>
-          <div className='inner-container center-align'>
-            <div className='test-content'> Grafi </div>
+        <div className='inner-container bubble-container'>
+            <div className='bubble large bubble-layer1' style={{left: "15%", bottom: "35%"}}> 
+              <img className='bubble-image wide-image' alt='no load' src={ScancarFigma}/>
+            </div>
+            <div className='bubble medium bubble-layer2' style={{left: "40%", bottom: "-65%"}}>
+              <img className='bubble-image' alt='no load' src={sketching}/>
+            </div>
+            <div className='bubble small bubble-layer3' style={{left: "60%", bottom: "10%"}}>
+              <img className='bubble-image' style={{objectFit: "contain", backgroundColor:"black"}} 
+              alt='no load' src={ITULogo}/>
+            </div>
+            <div className='bubble small bubble-layer4' style={{left: "0%", bottom: "-30%"}}>
+              <img className='bubble-image side2side' alt='no load' src={SeaWeed1}/>
+            </div>
           </div>
           <div className='inner-container left-align'>
             <div className='test-content'> Tekst </div>
           </div>
         </div>
-        <Breaker height="100px" />
+        <Breaker height="600px" />
         <div className='outer-container sidebyside'>
           <div className='inner-container right-align'>
             <div className='test-content'> Tekst </div>
           </div>
-          <div className='inner-container center-align'>
-            <div className='test-content'> Grafik </div>
+          <div className='inner-container bubble-container'>
+            <div className='bubble large bubble-layer1' style={{left: "15%", bottom: "35%"}}> 
+              <img className='bubble-image wide-image' alt='no load' src={ScancarFigma}/>
+            </div>
+            <div className='bubble medium bubble-layer2' style={{left: "40%", bottom: "-65%"}}>
+              <img className='bubble-image' alt='no load' src={sketching}/>
+            </div>
+            <div className='bubble small bubble-layer3' style={{left: "60%", bottom: "10%"}}>
+              <img className='bubble-image' style={{objectFit: "contain", backgroundColor:"black"}} 
+              alt='no load' src={ITULogo}/>
+            </div>
+            <div className='bubble small bubble-layer4' style={{left: "0%", bottom: "-30%"}}>
+              <img className='bubble-image side2side' alt='no load' src={SeaWeed1}/>
+            </div>
           </div>
         </div>
       </div>
