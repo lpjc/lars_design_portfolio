@@ -106,7 +106,9 @@ function App() {
     <div className="wrapper">
       {underConstruction()}
       <div className='overlay'>
+        
         <img className='small-logo' src={linkedInLogo} alt="linkedIn Logo no laoded" onClick={()=>window.open("https://www.linkedin.com/in/larsudraabstegn/", "_blank")}></img>
+      
       </div>
       <div id="frontpage" className='outer-container fullscreen' style={{
         justifyContent: "center"

@@ -441,6 +441,7 @@ svg{
   right: 10px;
 
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   overflow: hidden;
@@ -451,7 +452,7 @@ svg{
   background: linear-gradient(135deg, var(--lighter-color) -20%, var(--light-color) 100%); 
   background-size: 200% 200%;
   animation: gradientBackground 4s ease infinite;
-  z-index: 100; 
+  z-index: 999999; 
 }
 
 .fit-content{
