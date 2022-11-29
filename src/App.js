@@ -45,7 +45,7 @@ import JiraLogo from "./Data/Misc/Tool_logos/Jira.png"
 import ProcessingLogo from "./Data/Misc/Tool_logos/Processing.png"
 import ReactLogo from "./Data/Misc/Tool_logos/React.png"
 import ScancarFigma from "./Data/Web Applicaiton/ScanCar Prototype Hifi.png"
-
+import WWGif from "./Data/Web Applicaiton/WWgif.gif";
 import { width } from '@mui/system';
 import { AspectRatio } from '@mui/joy';
 import React, { useRef, useState } from 'react';
@@ -105,12 +105,14 @@ function App() {
   return (
     <div className="wrapper">
       {underConstruction()}
+
       <div className='overlay'>
         
         <img className='small-logo' src={linkedInLogo} alt="linkedIn Logo no laoded" onClick={()=>window.open("https://www.linkedin.com/in/larsudraabstegn/", "_blank")}></img>
       
       </div>
-      <div id="frontpage" className='outer-container fullscreen' style={{
+
+      <div id="Frontpage" className='outer-container fullscreen' style={{
         justifyContent: "center"
       }}>
         <div className='inner-container' style={{
@@ -160,7 +162,8 @@ function App() {
         </div>
 
       </div>
-      <div id="toolBanner" className='outer-container' style={{ position: "relative", width: "100%" }}>
+
+      <div id="Tool Banner" className='outer-container' style={{ position: "relative", width: "100%" }}>
         {populateLogos()}
         {logoDivs}
         <svg preserveAspectRatio="none">
@@ -170,7 +173,7 @@ function App() {
 
       <Breaker height="1000px" />
 
-      <div className='aboutSection'> 
+      <div id="About Section" className='aboutSection'> 
         <div id='AboutHeader' className='header aboutheader'>
           ABOUT
         </div>
@@ -245,16 +248,21 @@ function App() {
           </div>
         </div>
       </div>
-      <Breaker height="400px" />
+      
+      <Breaker height="800px" />
       <div id='ProjectsHeader' className='header aboutheader'>
           PROJECTS
         </div>
-      <div className='outer-container'>
-        Project Card
-      </div>
       <div className='outer-container sidebyside'>
-        <div className='inner-container right-align'> Tekst </div>
-        <div className='inner-container center-align'> Billde/video</div>
+
+        <div className='project-card-left column'>
+          <h1>Webcam Wizard</h1>
+          <div className='linebreaker'></div>
+          <h2>Prototyping an AI-powered web application</h2>
+        </div>
+        <div className='inner-container center-align background'>
+          <img className="shadow-image" src={WWGif} alt="GIF not supported"></img>
+        </div>
       </div>
       <Breaker height="100px" />
       <div className='outer-container sidebyside'>

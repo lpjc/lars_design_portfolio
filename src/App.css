@@ -14,6 +14,8 @@
   --bubble-size: 100px;
   --small-delay: 1s;
   --long-duration: 30s;
+  --my-shadow: drop-shadow(-5px 10px 5px var(--dark-color));
+
 }
 
 .path-on-page{
@@ -362,7 +364,6 @@ svg{
   min-height: 250px;
   position: relative;
   align-items: flex-start;
-
 }
 
 .bubble{
@@ -375,7 +376,6 @@ svg{
   align-items: center;
   overflow: hidden;
   filter: drop-shadow(-5px 10px 5px var(--dark-color));
-
 }
 
 @keyframes bopUpAndDown {
@@ -428,6 +428,43 @@ svg{
   background-color: var(--lighter-color);
   color: var(--my-black);
 }
+
+.linebreaker{
+  height: 10px;
+  width: auto;
+  background-color: var(--main-color);
+  border-radius: 25px;
+  padding: 0px;
+  margin: 0;
+  min-width: 400px;
+}
+h1{
+  font-size: 36px;
+  font-weight: 600;
+  padding: 0px;
+  margin: 0;
+  color: (var(--my-black));
+
+}
+h2{
+  font-size: 24px;
+  font-style: italic;
+  font-weight: 200;
+  padding: 0px;
+  margin: 0;
+  color: (var(--my-black));
+}
+
+.project-card-left{
+  display: flex;
+  padding-left: 30px;
+  padding-top: 20px;
+}
+.shadow-image{
+  filter: var(--my-shadow);
+  border-radius: 5px;
+}
+
 .overlay{
   position: fixed;
   text-align: right;
