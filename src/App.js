@@ -3,6 +3,8 @@ import './App.css';
 import CardCover from '@mui/joy/CardCover';
 import Card from '@mui/joy/Card';
 import SimpleImageSlider from "react-simple-image-slider";
+import { UilLightbulbAlt } from '@iconscout/react-unicons'
+import ReactCurvedText from "react-curved-text";
 
 import logo from './Data/Lars_logo_no_border.png'
 import larsPng1 from "./Data/Misc/Artboard 1.png"
@@ -22,7 +24,7 @@ import cicadaBeam from "./Data/Phyical Prototyping/closeup_on_beam.JPG"
 import catJourney from "./Data/Web Applicaiton/figma cat journey.png"
 import kinect from "./Data/Web Applicaiton/Kinect.png"
 import kinect2 from "./Data/Web Applicaiton/Kinect 2.png"
-import catStill from "./Data/Web Applicaiton/Cat_App_still.png"
+import catStill from "./Data/Web Applicaiton/catGif.gif"
 import gitQR from "./Data/Web Applicaiton/GitHub_QR.png"
 import PCB3dStill from "./Data/Phyical Prototyping/PCB_3d_still.png"
 import PCBasGraphic from "./Data/Phyical Prototyping/PCB_nice_graphic.png"
@@ -49,8 +51,13 @@ import WWGif from "./Data/Web Applicaiton/WWgif.gif";
 import { width } from '@mui/system';
 import { AspectRatio } from '@mui/joy';
 import React, { useRef, useState } from 'react';
+import zIndex from '@mui/material/styles/zIndex';
+import AIPosing from "./Data/Web Applicaiton/AIPosing.png"
+import ArcText from 'arc-text';
+
 
 const svgPath = "M0.5 255C0.5 255 221 5.49972 406 0.999967C591 -3.49978 658.5 150 828 197C997.5 244 1357.81 262.662 1453 255C1614.5 242 1888.83 192.666 2059 161.5"
+
 
 const toolLogos = [
     AdobeLogo,
@@ -77,6 +84,8 @@ function scrollToSection(id) {
 
 
 
+
+
 const logoDivs = []
 
 function populateLogos(){
@@ -94,6 +103,10 @@ function populateLogos(){
 function App() {
 
   const [alertCount, setAlertCount] = useState(0)
+
+  function bendtText(){
+    const element = new ArcText(document.getElementById('bendyboi'));
+  }
  
   function underConstruction(){
     if (alertCount === 0) {
@@ -104,7 +117,9 @@ function App() {
 
   return (
     <div className="wrapper">
-      {underConstruction()}
+        <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"/>
+      
+      {underConstruction()}   
 
       <div className='overlay'>
         
@@ -177,12 +192,15 @@ function App() {
         <div id='AboutHeader' className='header aboutheader'>
           ABOUT
         </div>
-
+        <Breaker height="200px" />
 
         <div className='outer-container sidebyside'>
 
           <div className='inner-container right-align'>
-            <div className='test-content text-card'> Text Card Here </div>
+            <div className='test-content text-card column'> 
+            <h1> UX '22 </h1>
+            <h2> Txt about ambition, adepting, knowledge, buzzwords</h2>
+            </div>
           </div>
         
           <div className='inner-container bubble-container'>
@@ -208,29 +226,37 @@ function App() {
         <Breaker height="600px" />
         <div className='outer-container sidebyside'>
         <div className='inner-container bubble-container'>
-            <div className='bubble large bubble-layer1' style={{left: "15%", bottom: "35%"}}> 
-              <img className='bubble-image wide-image' alt='no load' src={ScancarFigma}/>
+            <div className='bubble large bubble-layer1 overflowing' style={{left: "15%", bottom: "35%"}}> 
+              <img className='bubble-image wide-image pulse' alt='no load' src={catStill}/>
             </div>
             <div className='bubble medium bubble-layer2' style={{left: "40%", bottom: "-65%"}}>
-              <img className='bubble-image' alt='no load' src={sketching}/>
+              <img className='bubble-image' alt='no load' src={catStill}/>
             </div>
             <div className='bubble small bubble-layer3' style={{left: "60%", bottom: "10%"}}>
               <img className='bubble-image' style={{objectFit: "contain", backgroundColor:"black"}} 
               alt='no load' src={ITULogo}/>
             </div>
             <div className='bubble small bubble-layer4' style={{left: "0%", bottom: "-30%"}}>
-              <img className='bubble-image side2side' alt='no load' src={SeaWeed1}/>
+              <img className='bubble-image' alt='no load' src={kinect}/>
             </div>
           </div>
           <div className='inner-container left-align'>
-            <div className='test-content'> Tekst </div>
+            <div className='test-content text-card column'> 
+              <h1> Unique Profile </h1>
+              <h2> Philosphy, UX, UI, Front End programming</h2>
+            </div>
           </div>
         </div>
         <Breaker height="600px" />
         <div className='outer-container sidebyside'>
+
           <div className='inner-container right-align'>
-            <div className='test-content text-card'> Tekst </div>
+            <div className='test-content text-card column'> 
+            <h1> UX '22 </h1>
+            <h2> Txt about ambition, adepting, knowledge, buzzwords</h2>
+            </div>
           </div>
+        
           <div className='inner-container bubble-container'>
             <div className='bubble large bubble-layer1' style={{left: "15%", bottom: "35%"}}> 
               <img className='bubble-image wide-image' alt='no load' src={ScancarFigma}/>
@@ -246,8 +272,10 @@ function App() {
               <img className='bubble-image side2side' alt='no load' src={SeaWeed1}/>
             </div>
           </div>
+
         </div>
       </div>
+
       
       <Breaker height="800px" />
       <div id='ProjectsHeader' className='header aboutheader'>
@@ -260,30 +288,69 @@ function App() {
           <div className='linebreaker'></div>
           <h2>Prototyping an AI-powered web application</h2>
         </div>
+
         <div className='inner-container center-align background'>
-          <img className="shadow-image" src={WWGif} alt="GIF not supported"></img>
+          <img className="shadow-image max-half" src={WWGif} alt="GIF not supported"></img>
         </div>
+      </div>
+      <Breaker height="400px" />
+      <div className='outer-container sidebyside'>
+        <div className='inner-container center-align bubble-container3'>
+          <div className='bubble medium nofilter border' style={{top: "-40%"}}>
+       
+          </div>
+        </div>
+
+        
+        <div className='inner-container center-align bubble-container3 '> 
+          <div className='bubble medium nofilter border' style={{top: "30%"}}>
+             Iterate
+          </div>
+        </div>
+       
+        <div className='inner-container center-align bubble-container3'> 
+          <div className='bubble medium nofilter border' style={{top: "-40%", zIndex:"2"}}>
+        
+             Design Growth 
+          </div>
+          <div className='bubble large nofilter pulse' style={{top: "-60%", opacity:"60%"}}/>
+          <div className='bubble x-large nofilter pulse' style={{top: "-90%", opacity:"30%"}}/>
+
+        </div>
+      </div>
+      <Breaker height="400px" />
+      <div className='outer-container'>
+        <div className='project-card-left column'>
+          <h1>Cicada</h1>
+          <div className='linebreaker'></div>
+          <h2>Opensource audio graffiti</h2>
+        </div>
+        <div className='inner-container center-align background'>
+          <img className="shadow-image max-half" src={cicadaPrototype} alt="GIF not supported"></img>
+        </div>
+      </div>
+      <Breaker height="200px" />
+      <div className='outer-container'>
+        Double Diamnd here
       </div>
       <Breaker height="100px" />
       <div className='outer-container sidebyside'>
-        <div className='inner-container center-align'> Billde/video</div>
-        <div className='inner-container center-align'> Billde/video</div>
-        <div className='inner-container center-align'> Billde/video</div>
-      </div>
-      <Breaker height="100px" />
-      <div className='outer-container'>
-        Project Card
-      </div>
-      <Breaker height="100px" />
-      <div id="scroll2me" className='outer-container sidebyside'>
         <div className='inner-container text-card right-align'>Tekst </div>
         <div className='mosaic-container row'>
           <div className='mosaic-container column'>
-            <div className='inner-container center-align'> Billde/video</div>
-            <div className='inner-container center-align'> Billde/video</div>
-            <div className='inner-container center-align'> Billde/video</div>
+            <div className='inner-container center-align'> 
+              <img src={cicada1} className="bubble-image"></img>
+            </div>
+            <div className='inner-container center-align'> 
+              <img src={cicada4} className="bubble-image"></img>
+            </div>
+            <div className='inner-container center-align'>
+              <img src={cicada2} className="bubble-image"></img>
+            </div>
           </div>
-          <div className='inner-container center-align'> Billde/video</div>
+          <div className='inner-container center-align'>
+              <img src={cicadaBeam} className="bubble-image"></img>
+          </div>
         </div>
       </div>
     </div>
