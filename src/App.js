@@ -5,6 +5,7 @@ import Card from '@mui/joy/Card';
 import SimpleImageSlider from "react-simple-image-slider";
 import { UilLightbulbAlt } from '@iconscout/react-unicons'
 import ReactCurvedText from "react-curved-text";
+import LeaderLine from 'leader-line-new';
 
 import logo from './Data/Lars_logo_no_border.png'
 import larsPng1 from "./Data/Misc/Artboard 1.png"
@@ -54,10 +55,28 @@ import React, { useRef, useState } from 'react';
 import zIndex from '@mui/material/styles/zIndex';
 import AIPosing from "./Data/Web Applicaiton/AIPosing.png"
 import ArcText from 'arc-text';
-
+import ideationProcess1 from "./Data/Misc/Process/Screenshot 2022-12-02 at 14.03.58.png"
+import ideationProcess2 from "./Data/Misc/Process/Screenshot 2022-12-02 at 14.04.26.png"
 
 const svgPath = "M0.5 255C0.5 255 221 5.49972 406 0.999967C591 -3.49978 658.5 150 828 197C997.5 244 1357.81 262.662 1453 255C1614.5 242 1888.83 192.666 2059 161.5"
 
+function Slideshow(props) {
+  console.log('content card loaded');
+  return (
+    <Card component="li" sx={{"--Card-radius": "34px", minWidth: 350, flexGrow: props.flex }}>
+      <CardCover>
+        <SimpleImageSlider
+          width={'100%'}
+          height={'100%'}
+          images={props.imageArray}
+          autoPlay={true}
+          autoPlayDelay={0.1}
+          slideDuration={3}
+        />
+      </CardCover>
+    </Card>
+  )
+}
 
 const toolLogos = [
     AdobeLogo,
@@ -73,6 +92,9 @@ const toolLogos = [
     ReactLogo,
   ]
 
+const ideationPictures = [ ideationProcess1, ideationProcess2,
+]
+
 function Breaker(props) {
   return <div className='breaker' style={{ height: props.height }}> BREAKER </div>
 }
@@ -82,14 +104,9 @@ function scrollToSection(id) {
   element.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
-
-
-
-
 const logoDivs = []
 
 function populateLogos(){
-
   for (let i = 0; i < toolLogos.length; i++) {
     const thisLogo = toolLogos[i];
     logoDivs.push( 
@@ -100,24 +117,33 @@ function populateLogos(){
   }
 }
 
+document.addEventListener('DOMContentLoaded', function() {
+  setTimeout(function(){
+    var startElement = document.getElementById("startBubble"), 
+    middleElement = document.getElementById("middleBubble"),
+    endElement = document.getElementById("endBubble");
+  
+    new LeaderLine(startElement, middleElement, {color: '#fc7474', size: 10,startSocket: 'bottom', endSocket: 'left', endPlug: 'arrow2'})
+    new LeaderLine(middleElement, startElement, {color: '#fc7474', size: 10,startSocket: 'top', endSocket: 'right', endPlug: 'arrow2'})
+    new LeaderLine(middleElement, endElement, {color: '#fc7474', size: 10,startSocket: 'right', endPlug: 'arrow2'})
+  }, 3000);
+
+}, false);
+
+
 function App() {
 
   const [alertCount, setAlertCount] = useState(0)
-
-  function bendtText(){
-    const element = new ArcText(document.getElementById('bendyboi'));
-  }
- 
   function underConstruction(){
     if (alertCount === 0) {
-      alert("Under construction, this is live development!")
+      alert("Under construction, this is just a peak behind the curtain!")
       setAlertCount(1)    
     }
   }
 
   return (
     <div className="wrapper">
-        <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"/>
+      <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"/>
       
       {underConstruction()}   
 
@@ -145,8 +171,10 @@ function App() {
           padding: "5px",
           paddingBottom: "0",
           alignItems: "end",
-        }}>
-          Placeholder Name <br /> Placeholder Contact
+        }}><h1>
+            Lars Clausen // placeholder font <br /> - Tagline.
+        </h1>
+        
         </div>
         <div className='outer-container sidebyside' style={{
           justifySelf: "center",
@@ -165,15 +193,16 @@ function App() {
             height: "100%",
             minWidth: "350px",
           }}>
+
             <button className='test-content button light' onClick={() => scrollToSection("AboutHeader")}> Personality </button>
             <button className='test-content button dark' onClick={() => scrollToSection("ProjectsHeader")}> Projects </button>
           </div>
         </div>
 
         <div className='layer-image-container'>
-          <img className='image image1' alt='no load' src={larsPng1}></img>
-          <img className='image image2' alt='no load' src={larsPng2}></img>
-          <img className='image image3' alt='no load' src={larsPng3}></img>
+          <img className='layer-image image1' alt='no load' src={larsPng1}></img>
+          <img className='layer-image image2' alt='no load' src={larsPng2}></img>
+          <img className='layer-image image3' alt='no load' src={larsPng3}></img>
         </div>
 
       </div>
@@ -203,7 +232,7 @@ function App() {
             </div>
           </div>
         
-          <div className='inner-container bubble-container'>
+          <div className='inner-container reveal bubble-container'>
             <div className='bubble large bubble-layer1' style={{left: "15%", bottom: "35%"}}> 
               <img className='bubble-image wide-image' alt='no load' src={ScancarFigma}/>
             </div>
@@ -296,25 +325,32 @@ function App() {
       <Breaker height="400px" />
       <div className='outer-container sidebyside'>
         <div className='inner-container center-align bubble-container3'>
-          <div className='bubble medium nofilter border' style={{top: "-40%"}}>
-       
+          <div className='image-container'>
+           <img className="standard-image"src={ideationProcess2} alt="GIF not supported"></img>    
+          </div>
+          <div id="startBubble"  className='text-bubble nofilter border' style={{textAlign: "center", top: "-40%"}}>
+            Ideate & <br/> Collaborate  
           </div>
         </div>
 
         
-        <div className='inner-container center-align bubble-container3 '> 
-          <div className='bubble medium nofilter border' style={{top: "30%"}}>
-             Iterate
+        <div  className='inner-container center-align bubble-container3'> 
+          <div className='image-container'>
+            <img className="standard-image"src={cicadaPrototype} alt="GIF not supported"></img>
+          </div>
+          <div id="middleBubble" className='text-bubble nofilter border' style={{textAlign: "center", top: "70%"}}>
+             Prototype <br/> & Test
           </div>
         </div>
        
         <div className='inner-container center-align bubble-container3'> 
-          <div className='bubble medium nofilter border' style={{top: "-40%", zIndex:"2"}}>
-        
+          <div className='image-container'>
+            <img className="standard-image"src={cicadaBeam} alt="GIF not supported"></img>
+          </div>
+          <div id="endBubble" className='text-bubble nofilter border' style={{top: "-40%", zIndex:"2"}}>
              Design Growth 
           </div>
-          <div className='bubble large nofilter pulse' style={{top: "-60%", opacity:"60%"}}/>
-          <div className='bubble x-large nofilter pulse' style={{top: "-90%", opacity:"30%"}}/>
+          <div className='text-bubble nofilter pulse2' style={{top: "-40%", zIndex:"1"}}/>
 
         </div>
       </div>
@@ -354,7 +390,6 @@ function App() {
         </div>
       </div>
     </div>
-
   );
 }
 

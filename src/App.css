@@ -1,7 +1,7 @@
 * { box-sizing: border-box; }
 :root {
   --margin:10px;
-  --test-border: dashed grey 1.5px ;
+  --test-border: grey 1.5px ;
   --main-color: #fc7474;
   --light-color: #ffaeae;
   --lighter-color: #FDE9D8;
@@ -268,7 +268,33 @@ svg{
   }
 }
 
-.image{
+.text-bubble{
+  border-radius: 100%;
+  width: 65%;
+  min-width: 300px;
+  position: absolute;
+  background-color: var(--lighter-color);
+  aspect-ratio: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  filter: drop-shadow(-5px 10px 5px var(--dark-color));
+}
+.image-container{
+  border-radius: 10px;
+  max-height: 30vw;
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden
+}
+.standard-image{
+  min-width: 100%;
+  min-height: 100%
+}
+
+.layer-image{
   pointer-events: none;
   right: 0;
   bottom:-10%;
@@ -276,7 +302,7 @@ svg{
 
 
 @media (max-width: 730px) {
-  .image{
+  .layer-image{
     height: 500px; 
     bottom:5%;
     right: -10%;
@@ -552,6 +578,11 @@ h2{
   animation: pulse2 5s ease-in-out;
   animation-iteration-count: infinite;
 }
+.pulse2 {
+  z-index: 1;
+  animation: pulse 2s ease-in-out;
+  animation-iteration-count: infinite;
+}
 
 .pulsehover:hover {
   z-index: 1;
@@ -649,11 +680,13 @@ h2{
 
 @keyframes pulse {
   0% {
-    transform: scale(1);
+    transform: scale(0.95);
+    opacity: 100;
   }
+
   100% {
-    transform: scale(1.2);
-    box-shadow: 0 0 0 0 rgba(#5a99d4, 0);
+    transform: scale(1.7);
+    opacity: 0;
   }
 }
 @keyframes pulse2 {
