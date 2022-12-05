@@ -1,7 +1,7 @@
 * { box-sizing: border-box; }
 :root {
   --margin:10px;
-  --test-border: grey 1.5px ;
+  --test-border: dashed grey 1.5px ;
   --main-color: #fc7474;
   --light-color: #ffaeae;
   --lighter-color: #FDE9D8;
@@ -10,6 +10,7 @@
   --my-black: #1B0E0E;
   --my-white: #fefaf6;
   --my-background: #FCE0C5;
+  --my-transparent-background: #FCE0C5;
   --banner-speed: 11000ms;
   --bubble-size: 100px;
   --small-delay: 1s;
@@ -139,6 +140,17 @@
 	animation: gradientBackground 1s ease infinite;
 }
 
+.parrallax-container{
+  align-items: center;
+  display: flex;
+  height: 1000px;
+  justify-content: center;
+  margin: 0;
+  max-width: 100%;
+  width: 100vw;
+
+}
+
 .button:active {
   box-shadow: 0px 0px 0px 0px;
   top: 5px;
@@ -169,14 +181,45 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  
 }
 
+.parrallax-breaker{
+  position: absolute;
+  height: 800px;
+  width: 100vw;
+  display: block;
+  border: solid blue 3px ;
+}
+
+.parrallax-div-small{
+  height: 5vh;
+  aspect-ratio: 1;
+  background-color: var(--light-color);
+  opacity: 0.8;
+  z-index: 1;
+  position: relative;
+}
+.parrallax-div-medium{
+  height: 12vh;
+  aspect-ratio: 1;
+  background-color: var(--light-color);
+  opacity: 0.8;
+  z-index: 2;
+  position: relative;
+}
+.parrallax-div-large{
+  height: 20vh;
+  aspect-ratio: 1;
+  background-color: var(--light-color);
+  opacity: 0.8;
+  z-index: 3;
+  position: relative;
+}
 
 svg{
   position: absolute;
   top: -150px;
-  left: -200px;
+  left: -100px;
   overflow: visible; 
   transform:"translate(-1000,-100)";  
   width:"10%";
@@ -214,7 +257,7 @@ svg{
   z-index: 1000;
   position: absolute;
   top: -150px;
-  left: -200px;
+  left: -100px;
   overflow: visible;
   border-radius: 5px;
   font-size: large;
@@ -401,7 +444,7 @@ svg{
 }
 
 .bubble{
-  border-radius: 100%;
+  border-radius: 25%;
   position: absolute;
   background-color: var(--lighter-color);
   aspect-ratio: 1;
@@ -435,19 +478,19 @@ svg{
 }
 
 .bubble-layer1{
-  animation: bopUpAndDown 50s infinite ease-in-out;
+  animation: bopUpAndDown 30s infinite ease-in-out;
   z-index: 1;
 }
 .bubble-layer2{
-  animation: bopUpAndDown 40s infinite ease-in-out;
+  animation: bopUpAndDown 20s infinite ease-in-out;
   z-index: 2;
 }
 .bubble-layer3{
-  animation: bopUpAndDown 20s infinite ease-in-out;
+  animation: bopUpAndDown 35s infinite ease-in-out;
   z-index: 3;
 }
 .bubble-layer4{
-  animation: bopUpAndDown 10s infinite ease-in-out;
+  animation: bopUpAndDown 25s infinite ease-in-out;
   z-index: 4;
 }
 
@@ -470,8 +513,12 @@ svg{
   height: 220%
 }
 .text-card{
-  background-color: var(--lighter-color);
+  background-color: var(--my-transparent-background);
   color: var(--my-black);
+  border-radius: 10px;
+  height: 80%;
+  width: 50%;
+  padding: 10px;
 }
 
 .linebreaker{
@@ -494,6 +541,13 @@ h1{
 h2{
   font-size: 24px;
   font-style: italic;
+  font-weight: 200;
+  padding: 0px;
+  margin: 0;
+  color: (var(--my-black));
+}
+h3{
+  font-size: 18px;
   font-weight: 200;
   padding: 0px;
   margin: 0;

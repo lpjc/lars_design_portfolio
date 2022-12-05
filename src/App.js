@@ -3,10 +3,8 @@ import './App.css';
 import CardCover from '@mui/joy/CardCover';
 import Card from '@mui/joy/Card';
 import SimpleImageSlider from "react-simple-image-slider";
-import { UilLightbulbAlt } from '@iconscout/react-unicons'
-import ReactCurvedText from "react-curved-text";
 import LeaderLine from 'leader-line-new';
-
+import { ParallaxProvider, Parallax } from 'react-scroll-parallax'
 import logo from './Data/Lars_logo_no_border.png'
 import larsPng1 from "./Data/Misc/Artboard 1.png"
 import larsPng2 from "./Data/Misc/Artboard 1 copy.png"
@@ -123,9 +121,9 @@ document.addEventListener('DOMContentLoaded', function() {
     middleElement = document.getElementById("middleBubble"),
     endElement = document.getElementById("endBubble");
   
-    new LeaderLine(startElement, middleElement, {color: '#fc7474', size: 10,startSocket: 'bottom', endSocket: 'left', endPlug: 'arrow2'})
-    new LeaderLine(middleElement, startElement, {color: '#fc7474', size: 10,startSocket: 'top', endSocket: 'right', endPlug: 'arrow2'})
-    new LeaderLine(middleElement, endElement, {color: '#fc7474', size: 10,startSocket: 'right', endPlug: 'arrow2'})
+    new LeaderLine(startElement, middleElement, {color: '#fc7474', size: 20,startSocket: 'bottom', endSocket: 'left', endPlug: 'arrow3', dash: {animation: true}})
+    new LeaderLine(middleElement, startElement, {color: '#fc7474', size: 20,startSocket: 'top', endSocket: 'right', endPlug: 'arrow3', dash: {animation: true}})
+    new LeaderLine(middleElement, endElement, {color: '#fc7474', size: 20,startSocket: 'right', endPlug: 'arrow3', dash: {animation: true}})
   }, 3000);
 
 }, false);
@@ -143,14 +141,13 @@ function App() {
 
   return (
     <div className="wrapper">
+           <ParallaxProvider>
       <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"/>
       
       {underConstruction()}   
 
       <div className='overlay'>
-        
-        <img className='small-logo' src={linkedInLogo} alt="linkedIn Logo no laoded" onClick={()=>window.open("https://www.linkedin.com/in/larsudraabstegn/", "_blank")}></img>
-      
+        <img className='small-logo' src={linkedInLogo} style={{backgroundColor: "white", borderRadius: "17%"}} alt="linkedIn Logo no laoded" onClick={()=>window.open("https://www.linkedin.com/in/larsudraabstegn/", "_blank")}></img> 
       </div>
 
       <div id="Frontpage" className='outer-container fullscreen' style={{
@@ -214,21 +211,60 @@ function App() {
           <path stroke="#fc7474" strokeWidth="220" strokeLinecap="round" fill="#0099ff" fill-opacity="0" d={svgPath}></path>
         </svg>
       </div>
+      <Breaker height="800px"/>
 
-      <Breaker height="1000px" />
+     {/* <div className='outer-container' style={{display: "flex", justifyContent:"center", alignItems:"center", height: "800px"}}>
+          <div className='layer1 parrallax-breaker'>
+            <Parallax translateY={[80, -80]}>
+              <div className='parrallax-div-small'></div>
+              <div className='parrallax-div-small'></div>
+              <div className='parrallax-div-small'></div>
+              <div className='parrallax-div-small'></div>
+              <div className='parrallax-div-small'></div>
+              <div className='parrallax-div-small'></div>
+              <div className='parrallax-div-small'></div>
+              <div className='parrallax-div-small'></div>
+              <div className='parrallax-div-small'></div>
+            </Parallax>
+          </div>
+          <div className='layer2 parrallax-breaker'> 
+            <Parallax translateY={[-30, 10]}>
+              <div className='parrallax-div-medium'></div>
+              <div className='parrallax-div-medium'></div>
+              <div className='parrallax-div-medium'></div>
+              <div className='parrallax-div-medium'></div>
+              <div className='parrallax-div-medium'></div>
+              <div className='parrallax-div-medium'></div>
+              <div className='parrallax-div-medium'></div>
+            </Parallax>
+          </div>
+          <div className='layer3 parrallax-breaker'>    
+            <Parallax translateY={[-10, 30]}>
+              <div className='parrallax-div-large'></div>
+              <div className='parrallax-div-large'></div>
+              <div className='parrallax-div-large'></div>
+              <div className='parrallax-div-large'></div>
+              <div className='parrallax-div-large'></div>
+              <div className='parrallax-div-large'></div>
+            </Parallax>
+          </div>
+        </div> */}
+
 
       <div id="About Section" className='aboutSection'> 
         <div id='AboutHeader' className='header aboutheader'>
           ABOUT
         </div>
-        <Breaker height="200px" />
+  
 
         <div className='outer-container sidebyside'>
 
           <div className='inner-container right-align'>
-            <div className='test-content text-card column'> 
-            <h1> UX '22 </h1>
-            <h2> Txt about ambition, adepting, knowledge, buzzwords</h2>
+            <div className='text-card column' style={{textAlign: "right", paddingRight: "15px"}}> 
+              <h1> UX '22 </h1>
+              <h3> 
+                Ideaiton, evaluation and facilitation of design and creative thinking.
+              </h3>
             </div>
           </div>
         
@@ -240,16 +276,16 @@ function App() {
               <img className='bubble-image' alt='no load' src={sketching}/>
             </div>
             <div className='bubble small bubble-layer3' style={{left: "60%", bottom: "10%"}}>
-              <img className='bubble-image' style={{objectFit: "contain", backgroundColor:"black"}} 
-              alt='no load' src={ITULogo}/>
+              <img className='bubble-image' 
+              alt='no load' src={ideationProcess1}/>
             </div>
             <div className='bubble small bubble-layer4' style={{left: "0%", bottom: "-30%"}}>
-              <img className='bubble-image side2side' alt='no load' src={SeaWeed1}/>
+              <img className='bubble-image' style={{objectFit: "contain", backgroundColor:"black"}}  
+                alt='no load' src={ITULogo}/>
             </div>
           </div>
 
         </div>
-
 
 
         <Breaker height="600px" />
@@ -258,14 +294,14 @@ function App() {
             <div className='bubble large bubble-layer1 overflowing' style={{left: "15%", bottom: "35%"}}> 
               <img className='bubble-image wide-image pulse' alt='no load' src={catStill}/>
             </div>
-            <div className='bubble medium bubble-layer2' style={{left: "40%", bottom: "-65%"}}>
-              <img className='bubble-image' alt='no load' src={catStill}/>
+            <div className='bubble medium bubble-layer2' style={{left: "40%", bottom: "-65%", zIndex: "10"}}>
+              <img className='bubble-image' alt='no load' src={PCB3dStill}/>
             </div>
-            <div className='bubble small bubble-layer3' style={{left: "60%", bottom: "10%"}}>
-              <img className='bubble-image' style={{objectFit: "contain", backgroundColor:"black"}} 
-              alt='no load' src={ITULogo}/>
+            <div className='bubble small bubble-layer3' style={{left: "55%", bottom: "30%"}}>
+              <img className='bubble-image wide-image' style={{objectFit: "contain", backgroundColor:"#66e9bf", transform: "scaleX(-1)"}} 
+              alt='no load' src={cicada1}/>
             </div>
-            <div className='bubble small bubble-layer4' style={{left: "0%", bottom: "-30%"}}>
+            <div className='bubble small bubble-layer4' style={{left: "20%", bottom: "-35%"}}>
               <img className='bubble-image' alt='no load' src={kinect}/>
             </div>
           </div>
@@ -322,11 +358,11 @@ function App() {
           <img className="shadow-image max-half" src={WWGif} alt="GIF not supported"></img>
         </div>
       </div>
-      <Breaker height="400px" />
+      <Breaker height="900px" />
       <div className='outer-container sidebyside'>
         <div className='inner-container center-align bubble-container3'>
           <div className='image-container'>
-           <img className="standard-image"src={ideationProcess2} alt="GIF not supported"></img>    
+            <img className="standard-image"src={ideationProcess2} alt="GIF not supported"></img>    
           </div>
           <div id="startBubble"  className='text-bubble nofilter border' style={{textAlign: "center", top: "-40%"}}>
             Ideate & <br/> Collaborate  
@@ -389,6 +425,7 @@ function App() {
           </div>
         </div>
       </div>
+      </ParallaxProvider>
     </div>
   );
 }
