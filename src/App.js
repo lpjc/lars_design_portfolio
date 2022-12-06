@@ -5,7 +5,17 @@ import Card from '@mui/joy/Card';
 import SimpleImageSlider from "react-simple-image-slider";
 import LeaderLine from 'leader-line-new';
 import { ParallaxProvider, Parallax } from 'react-scroll-parallax'
+import { width } from '@mui/system';
+import { AspectRatio } from '@mui/joy';
+import React, { useRef, useState } from 'react';
+import zIndex from '@mui/material/styles/zIndex';
+import AIPosing from "./Data/Web Applicaiton/AIPosing.png"
+import ArcText from 'arc-text';
+
+import larsChef from "./Data/Misc/Lars Final (1 of 1).jpg"
+import neckerCube from './Data/Misc/Necker_cube.svg.png'
 import logo from './Data/Lars_logo_no_border.png'
+import larsSnakker from "./Data/Misc/Lars_taler.JPG"
 import larsPng1 from "./Data/Misc/Artboard 1.png"
 import larsPng2 from "./Data/Misc/Artboard 1 copy.png"
 import larsPng3 from "./Data/Misc/Artboard 1 copy 2.png"
@@ -47,12 +57,6 @@ import ProcessingLogo from "./Data/Misc/Tool_logos/Processing.png"
 import ReactLogo from "./Data/Misc/Tool_logos/React.png"
 import ScancarFigma from "./Data/Web Applicaiton/ScanCar Prototype Hifi.png"
 import WWGif from "./Data/Web Applicaiton/WWgif.gif";
-import { width } from '@mui/system';
-import { AspectRatio } from '@mui/joy';
-import React, { useRef, useState } from 'react';
-import zIndex from '@mui/material/styles/zIndex';
-import AIPosing from "./Data/Web Applicaiton/AIPosing.png"
-import ArcText from 'arc-text';
 import ideationProcess1 from "./Data/Misc/Process/Screenshot 2022-12-02 at 14.03.58.png"
 import ideationProcess2 from "./Data/Misc/Process/Screenshot 2022-12-02 at 14.04.26.png"
 
@@ -121,9 +125,9 @@ document.addEventListener('DOMContentLoaded', function() {
     middleElement = document.getElementById("middleBubble"),
     endElement = document.getElementById("endBubble");
   
-    new LeaderLine(startElement, middleElement, {color: '#fc7474', size: 20,startSocket: 'bottom', endSocket: 'left', endPlug: 'arrow3', dash: {animation: true}})
-    new LeaderLine(middleElement, startElement, {color: '#fc7474', size: 20,startSocket: 'top', endSocket: 'right', endPlug: 'arrow3', dash: {animation: true}})
-    new LeaderLine(middleElement, endElement, {color: '#fc7474', size: 20,startSocket: 'right', endPlug: 'arrow3', dash: {animation: true}})
+    new LeaderLine(startElement, middleElement, {color: '#fc7474', size: 20,startSocket: 'bottom', endSocket: 'left', endPlug: 'arrow3', dash: {animation: true}})
+    new LeaderLine(middleElement, startElement, {color: '#fc7474', size: 20,startSocket: 'top', endSocket: 'right', endPlug: 'arrow3', dash: {animation: true}})
+    new LeaderLine(middleElement, endElement, {color: '#fc7474', size: 20,startSocket: 'right', endPlug: 'arrow3', dash: {animation: true}})
   }, 3000);
 
 }, false);
@@ -292,10 +296,10 @@ function App() {
         <div className='outer-container sidebyside'>
         <div className='inner-container bubble-container'>
             <div className='bubble large bubble-layer1 overflowing' style={{left: "15%", bottom: "35%"}}> 
-              <img className='bubble-image wide-image pulse' alt='no load' src={catStill}/>
+              <img className='bubble-image wide-image ' alt='no load' src={catStill}/>
             </div>
-            <div className='bubble medium bubble-layer2' style={{left: "40%", bottom: "-65%", zIndex: "10"}}>
-              <img className='bubble-image' alt='no load' src={PCB3dStill}/>
+            <div className='bubble medium bubble-layer2 ' style={{left: "40%", bottom: "-65%", zIndex: "10", overflow: "visible"}}>
+              <img className='bubble-image pulse' alt='no load' src={PCB3dStill}/>
             </div>
             <div className='bubble small bubble-layer3' style={{left: "55%", bottom: "30%"}}>
               <img className='bubble-image wide-image' style={{objectFit: "contain", backgroundColor:"#66e9bf", transform: "scaleX(-1)"}} 
@@ -307,8 +311,10 @@ function App() {
           </div>
           <div className='inner-container left-align'>
             <div className='test-content text-card column'> 
-              <h1> Unique Profile </h1>
-              <h2> Philosphy, UX, UI, Front End programming</h2>
+              <h1> Digital, Hybrid & Physical </h1>
+              <h2> 
+                Txt about ambition, adepting, knowledge, buzzwords
+              </h2>
             </div>
           </div>
         </div>
@@ -317,24 +323,26 @@ function App() {
 
           <div className='inner-container right-align'>
             <div className='test-content text-card column'> 
-            <h1> UX '22 </h1>
-            <h2> Txt about ambition, adepting, knowledge, buzzwords</h2>
+              <h1> Unique Profile </h1>
+              <h2> 
+                Philosphy, UX, UI, Front End programming
+              </h2>
             </div>
           </div>
         
           <div className='inner-container bubble-container'>
             <div className='bubble large bubble-layer1' style={{left: "15%", bottom: "35%"}}> 
-              <img className='bubble-image wide-image' alt='no load' src={ScancarFigma}/>
+              <img className='bubble-image wide-image' alt='no load' src={larsSnakker}/>
             </div>
-            <div className='bubble medium bubble-layer2' style={{left: "40%", bottom: "-65%"}}>
-              <img className='bubble-image' alt='no load' src={sketching}/>
+            <div className='bubble medium bubble-layer2' style={{left: "40%", bottom: "-65%", zIndex: "10"}}>
+              <img className='bubble-image' alt='no load' src={larsSnakker}/>
             </div>
             <div className='bubble small bubble-layer3' style={{left: "60%", bottom: "10%"}}>
               <img className='bubble-image' style={{objectFit: "contain", backgroundColor:"black"}} 
-              alt='no load' src={ITULogo}/>
+              alt='no load' src={larsChef}/>
             </div>
             <div className='bubble small bubble-layer4' style={{left: "0%", bottom: "-30%"}}>
-              <img className='bubble-image side2side' alt='no load' src={SeaWeed1}/>
+              <img className='bubble-image' alt='no load' src={neckerCube} style={{height: "80"}}/>
             </div>
           </div>
 
