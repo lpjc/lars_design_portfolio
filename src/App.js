@@ -12,6 +12,11 @@ import zIndex from '@mui/material/styles/zIndex';
 import AIPosing from "./Data/Web Applicaiton/AIPosing.png"
 import ArcText from 'arc-text';
 
+import cicadaOnStairs from "./Data/Phyical Prototyping/P1070048.JPG"
+import cicadaOnPost from "./Data/Phyical Prototyping/DSCF1499.JPG"
+import processWorkshop from "./Data/Misc/Process.jpg"
+import fishProcess from "./Data/Misc/Process/Fish-Process.png"
+import figmaThing from "./Data/Web Applicaiton/Momona Figma.png"
 import larsChef from "./Data/Misc/Lars Final (1 of 1).jpg"
 import neckerCube from './Data/Misc/Necker_cube.svg.png'
 import logo from './Data/Lars_logo_no_border.png'
@@ -173,7 +178,7 @@ function App() {
           paddingBottom: "0",
           alignItems: "end",
         }}><h1>
-            Lars Clausen // placeholder font <br /> - Tagline.
+            Lars Clausen // placeholder font 
         </h1>
         
         </div>
@@ -264,11 +269,14 @@ function App() {
         <div className='outer-container sidebyside'>
 
           <div className='inner-container right-align'>
-            <div className='text-card column' style={{textAlign: "right", paddingRight: "15px"}}> 
-              <h1> UX '22 </h1>
-              <h3> 
-                Ideaiton, evaluation and facilitation of design and creative thinking.
-              </h3>
+            <div style={{textAlign: "right", paddingRight: "15px"}}> 
+              <h1 style={{color:"#FDE9D8"}}> 
+               UX '22 
+              </h1>
+              <h2> 
+                Promoting modern Design Thinking <br/>
+                by ideating, prototyping and testing creativly. 
+              </h2>
             </div>
           </div>
         
@@ -288,32 +296,43 @@ function App() {
                 alt='no load' src={ITULogo}/>
             </div>
           </div>
-
         </div>
 
-
-        <Breaker height="600px" />
+        <Breaker height="800px" />
+        
         <div className='outer-container sidebyside'>
+        
         <div className='inner-container bubble-container'>
-            <div className='bubble large bubble-layer1 overflowing' style={{left: "15%", bottom: "35%"}}> 
+            <div className='bubble large bubble-layer1 overflowing' style={{left: "15%", bottom: "5%"}}> 
               <img className='bubble-image wide-image ' alt='no load' src={catStill}/>
             </div>
-            <div className='bubble medium bubble-layer2 ' style={{left: "40%", bottom: "-65%", zIndex: "10", overflow: "visible"}}>
+            <div className='bubble medium bubble-layer2 ' style={{left: "45%", bottom: "-95%", zIndex: "10", overflow: "visible"}}>
               <img className='bubble-image pulse' alt='no load' src={PCB3dStill}/>
             </div>
-            <div className='bubble small bubble-layer3' style={{left: "55%", bottom: "30%"}}>
+            <div className='bubble small bubble-layer3' style={{left: "55%", bottom: "40%"}}>
               <img className='bubble-image wide-image' style={{objectFit: "contain", backgroundColor:"#66e9bf", transform: "scaleX(-1)"}} 
               alt='no load' src={cicada1}/>
             </div>
-            <div className='bubble small bubble-layer4' style={{left: "20%", bottom: "-35%"}}>
+            <div className='bubble medium bubble-layer1 ' style={{left: "5%", bottom: "115%", zIndex: "0"}}>
+              <img className='bubble-image' alt='no load' src={cicadaPrototype}/>
+            </div>
+            <div className='bubble small bubble-layer2 ' style={{left: "75%", bottom: "-40%", zIndex: "0"}}>
+              <img className='bubble-image' alt='no load' src={CNCscreenshot}/>
+            </div>
+            <div className='bubble small bubble-layer3' style={{left: "65%", bottom: "135%", zIndex: "0"}}> 
+              <img className='bubble-image wide-image ' alt='no load' src={figmaThing}/>
+            </div>
+            <div className='bubble medium bubble-layer1' style={{left: "10%", bottom: "-70%"}}>
               <img className='bubble-image' alt='no load' src={kinect}/>
             </div>
           </div>
           <div className='inner-container left-align'>
-            <div className='test-content text-card column'> 
-              <h1> Digital, Hybrid & Physical </h1>
+            <div> 
+              <h1 style={{color:"#5C3131"}}> Digital, Hybrid & Physical </h1>
               <h2> 
-                Txt about ambition, adepting, knowledge, buzzwords
+                Capable in mediums across the spectrum
+                <br/>
+                Always looking to expand my pool of knowledge
               </h2>
             </div>
           </div>
@@ -322,27 +341,25 @@ function App() {
         <div className='outer-container sidebyside'>
 
           <div className='inner-container right-align'>
-            <div className='test-content text-card column'> 
-              <h1> Unique Profile </h1>
+          <div style={{textAlign: "right"}}> 
+              <h1 > 
+                Unique Profile 
+              </h1>
               <h2> 
-                Philosphy, UX, UI, Front End programming
+                Design, philosophy and commuincation. 
               </h2>
             </div>
           </div>
         
           <div className='inner-container bubble-container'>
-            <div className='bubble large bubble-layer1' style={{left: "15%", bottom: "35%"}}> 
-              <img className='bubble-image wide-image' alt='no load' src={larsSnakker}/>
-            </div>
-            <div className='bubble medium bubble-layer2' style={{left: "40%", bottom: "-65%", zIndex: "10"}}>
+            <div className='bubble medium ' style={{left: "68%", bottom: "0%", zIndex: "10"}}>
               <img className='bubble-image' alt='no load' src={larsSnakker}/>
             </div>
-            <div className='bubble small bubble-layer3' style={{left: "60%", bottom: "10%"}}>
-              <img className='bubble-image' style={{objectFit: "contain", backgroundColor:"black"}} 
-              alt='no load' src={larsChef}/>
+            <div className='bubble medium' style={{left: "34%", bottom: "0%"}}>
+              <img className='bubble-image' alt='no load' src={processWorkshop}/>
             </div>
-            <div className='bubble small bubble-layer4' style={{left: "0%", bottom: "-30%"}}>
-              <img className='bubble-image' alt='no load' src={neckerCube} style={{height: "80"}}/>
+            <div className='bubble medium ' style={{left: "0%", bottom: "0%"}}>
+              <img className='bubble-image' alt='no load' src={neckerCube} style={{height: "80%"}}/>
             </div>
           </div>
 
@@ -356,7 +373,7 @@ function App() {
         </div>
       <div className='outer-container sidebyside'>
 
-        <div className='project-card-left column'>
+        <div className='project-card-left column' style={{textAlign: "right", paddingRight: "15px"}}>
           <h1>Webcam Wizard</h1>
           <div className='linebreaker'></div>
           <h2>Prototyping an AI-powered web application</h2>
@@ -364,6 +381,21 @@ function App() {
 
         <div className='inner-container center-align background'>
           <img className="shadow-image max-half" src={WWGif} alt="GIF not supported"></img>
+        </div>
+      </div>
+     
+      <Breaker height="600px" />
+      <div className='outer-container'>
+        <div className='project-card-left column' style={{textAlign: "right", paddingLeft: "140px"}}>
+          <h1>Cicada</h1>
+          <div className='linebreaker'></div>
+          <h2>Opensource audio graffiti</h2>
+        </div>
+        <div className='inner-container center-align background' >
+          <img className="shadow-image max-half" style={{maxWidth: "28vw",maxHeight: "55vh", objectFit:"cover", marginRight: "2%"}} 
+            src={cicadaOnPost} alt="GIF not supported"></img>
+          <img className="shadow-image max-half" style={{maxWidth: "28vw",minHeight: "55vh", objectFit:"cover"}} 
+            src={cicadaOnStairs} alt="GIF not supported"></img>
         </div>
       </div>
       <Breaker height="900px" />
@@ -398,18 +430,7 @@ function App() {
 
         </div>
       </div>
-      <Breaker height="400px" />
-      <div className='outer-container'>
-        <div className='project-card-left column'>
-          <h1>Cicada</h1>
-          <div className='linebreaker'></div>
-          <h2>Opensource audio graffiti</h2>
-        </div>
-        <div className='inner-container center-align background'>
-          <img className="shadow-image max-half" src={cicadaPrototype} alt="GIF not supported"></img>
-        </div>
-      </div>
-      <Breaker height="200px" />
+      <Breaker height="800px" />
       <div className='outer-container'>
         Double Diamnd here
       </div>

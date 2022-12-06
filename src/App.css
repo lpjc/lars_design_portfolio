@@ -1,13 +1,13 @@
 * { box-sizing: border-box; }
 :root {
   --margin:10px;
-  --test-border: dashed grey 1.5px ;
+  --test-border: grey 1.5px ;
   --main-color: #fc7474;
   --light-color: #ffaeae;
   --lighter-color: #FDE9D8;
   --dark-color:  #5C3131;
   --accent-color: #69DDFF;
-  --my-black: #1B0E0E;
+  --my-black: #2e1919;
   --my-white: #fefaf6;
   --my-background: #FCE0C5;
   --my-transparent-background: #FCE0C5;
@@ -311,6 +311,10 @@ svg{
   }
 }
 
+.txt{
+  padding: 5px;
+}
+
 .text-bubble{
   border-radius: 100%;
   width: 65%;
@@ -531,15 +535,14 @@ svg{
   min-width: 400px;
 }
 h1{
-  font-size: 36px;
+  font-size: 68px;
   font-weight: 600;
   padding: 0px;
   margin: 0;
-  color: (var(--my-black));
-
+  color: var(--main-color);
 }
 h2{
-  font-size: 24px;
+  font-size: 32px;
   font-style: italic;
   font-weight: 200;
   padding: 0px;
