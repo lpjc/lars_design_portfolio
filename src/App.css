@@ -126,8 +126,9 @@
   font-size: 130px;
   font-weight:bold;
   height: 240px;
-  color:var(--my-black);
+  color:var(--dark-color);
   margin-left: 5%;
+  text-shadow: 10px 10px var(--main-color);
 }
 .aboutheader{
   margin-top: -125px;

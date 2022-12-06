@@ -103,7 +103,7 @@ const ideationPictures = [ ideationProcess1, ideationProcess2,
 ]
 
 function Breaker(props) {
-  return <div className='breaker' style={{ height: props.height }}> BREAKER </div>
+  return <div className='breaker' style={{ height: props.height }}> BREAKER {props.height} </div>
 }
 
 function scrollToSection(id) {
