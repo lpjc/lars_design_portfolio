@@ -11,6 +11,7 @@ import React, { useRef, useState } from 'react';
 import zIndex from '@mui/material/styles/zIndex';
 import AIPosing from "./Data/Web Applicaiton/AIPosing.png"
 import ArcText from 'arc-text';
+import { Analytics } from '@vercel/analytics/react';
 
 import cicadaOnStairs from "./Data/Phyical Prototyping/P1070048.JPG"
 import cicadaOnPost from "./Data/Phyical Prototyping/DSCF1499.JPG"
@@ -150,7 +151,9 @@ function App() {
 
   return (
     <div className="wrapper">
-           <ParallaxProvider>
+      <ParallaxProvider>
+      <Analytics />
+            
       <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"/>
       
       {underConstruction()}   
@@ -356,10 +359,10 @@ function App() {
               <img className='bubble-image' alt='no load' src={larsSnakker}/>
             </div>
             <div className='bubble medium' style={{left: "34%", bottom: "0%"}}>
-              <img className='bubble-image' alt='no load' src={processWorkshop}/>
+              <img className='bubble-image' alt='no load' src={neckerCube} style={{height: "80%"}}/>
             </div>
             <div className='bubble medium ' style={{left: "0%", bottom: "0%"}}>
-              <img className='bubble-image' alt='no load' src={neckerCube} style={{height: "80%"}}/>
+              <img className='bubble-image' alt='no load' src={processWorkshop} />
             </div>
           </div>
 
