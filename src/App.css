@@ -128,10 +128,22 @@
   height: 240px;
   color:var(--dark-color);
   margin-left: 5%;
-  text-shadow: 10px 10px var(--main-color);
+}
+.row{
+  display: flex;
 }
 .aboutheader{
   margin-top: -125px;
+  text-shadow: 10px 10px var(--main-color);
+}
+.projectsheader{
+  justify-content: center;
+  margin-top: -125px;
+  margin-bottom: 75px;
+  padding-right: 200px;
+  text-align: center;
+  align-items: flex-end;
+  text-shadow: 5px 5px 3px var(--main-color);
 }
 
 .aboutSection{
@@ -461,7 +473,11 @@ svg{
 }
 
 .max-half{
-  width: 55vw;
+ width: 55vw;
+}
+
+.no-shaodw{
+  text-shadow: none;
 }
 
 .border{
