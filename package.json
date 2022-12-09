@@ -13,6 +13,7 @@
     "@testing-library/user-event": "^13.2.1",
     "@vercel/analytics": "^0.1.5",
     "arc-text": "^1.0.1",
+    "framer-motion": "^7.6.19",
     "leader-line": "^1.0.7",
     "leader-line-new": "^1.1.9",
     "masonry-layout": "^4.2.2",

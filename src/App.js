@@ -7,10 +7,11 @@ import LeaderLine from 'leader-line-new';
 import { ParallaxProvider, Parallax } from 'react-scroll-parallax'
 import { width } from '@mui/system';
 import { AspectRatio } from '@mui/joy';
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import zIndex from '@mui/material/styles/zIndex';
 import AIPosing from "./Data/Web Applicaiton/AIPosing.png"
 import ArcText from 'arc-text';
+import { motion, useScroll } from "framer-motion"
 import { Analytics } from '@vercel/analytics/react';
 
 import seaweedMockups from "./Data/Web Applicaiton/Seaweed.png"
@@ -126,7 +127,7 @@ function populateLogos() {
   }
 }
 
-const larsLayers ={
+const larsLayers = {
 
 }
 
@@ -144,6 +145,31 @@ document.addEventListener('DOMContentLoaded', function () {
 
 }, false);
 
+function getScrolling(params) {
+    
+  const SVGFullPath = document.getElementById('fullPath');
+  const FullPathLenght = SVGFullPath.getTotalLength();;
+  
+  SVGFullPath.style.strokeDasharray = FullPathLenght;
+  SVGFullPath.style.strokeDashoffset = FullPathLenght;
+  
+
+  const drawWhenScroll = () =>{
+    console.log(calcScrollPercent());
+    const DrawPath = FullPathLenght * calcScrollPercent();
+
+    SVGFullPath.style.strokeDashoffset = FullPathLenght - DrawPath;
+
+  }
+
+  const calcScrollPercent = () => {
+    let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    return document.documentElement.scrollTop / height;
+  }
+
+  window.addEventListener('scroll', drawWhenScroll());
+}
+
 
 function App() {
 
@@ -155,6 +181,16 @@ function App() {
     }
   }
 
+  function ScrollComponent() {
+    const scrollYProgress = useScroll();
+    // <motion.div style={{ scaleX: scrollYProgress }}> HEJ </motion.div >  
+    return (
+      <button style={{ height: "100px", aspectRatio: "1" }} onClick={() => getScrolling()
+      }></button>
+    )
+  }
+
+
   return (
     <div className="wrapper">
       <ParallaxProvider>
@@ -163,14 +199,19 @@ function App() {
         <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
 
         {underConstruction()}
-
+        <svg width="1267" height="15399" viewBox="0 0 1267 15399" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path id="fullPath" xmlns="http://www.w3.org/2000/svg" d="M1177 90L90 5030.44L898 10201.1L384 15309" stroke="#378EB3" stroke-width="179" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
         <div className='overlay'>
+          <ScrollComponent></ScrollComponent>
+
           <img className='small-logo' src={linkedInLogo} style={{ backgroundColor: "white", borderRadius: "17%" }} alt="linkedIn Logo no laoded" onClick={() => window.open("https://www.linkedin.com/in/larsudraabstegn/", "_blank")}></img>
         </div>
 
         <div id="Frontpage" className='outer-container fullscreen' style={{
           justifyContent: "center"
         }}>
+
           <div className='inner-container' style={{
             maxHeight: "120px",
             maxWidth: "120px",
@@ -378,9 +419,9 @@ function App() {
 
         <Breaker height="800px" />
         <div id='ProjectsHeader' className='header projectsheader row'>
-           Project<h1 style={{textShadow: "none", marginLeft: "20px"}}> highlights</h1>
+          Project<h1 style={{ textShadow: "none", marginLeft: "20px" }}> highlights</h1>
         </div>
-        <Breaker height="200px"/>
+        <Breaker height="200px" />
         <div className='outer-container sidebyside'>
 
           <div className='project-card-left column' style={{ textAlign: "right", paddingRight: "15px" }}>

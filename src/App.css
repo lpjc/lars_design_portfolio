@@ -360,6 +360,11 @@ svg{
   bottom:-10%;
 }
 
+line {
+  stroke-width: 10px;
+  stroke-linecap: round;
+  fill: transparent;
+}
 
 @media (max-width: 730px) {
   .layer-image{
