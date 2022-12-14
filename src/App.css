@@ -41,6 +41,8 @@
   font-weight: bold;
   color: var(--my-black);
   min-height: 300px;
+  padding-right: 3%;
+  padding-left: 3%;
 }
 .sidebyside{
   flex-direction: row;
@@ -53,6 +55,59 @@
   border: var(--test-border);
   border-radius: 10px;
   margin: var(--margin);
+}
+
+.project-card{
+  display: flex;
+  align-items: left;
+  flex: 1;
+  border: var(--test-border);
+  border-radius: 10px;
+  margin: var(--margin);
+  flex-direction: column;
+  background-color: var(--lighter-color);
+  filter: var(--my-shadow);
+  padding: 20px
+}
+
+.image-row{
+ display: flex;
+ margin-top: 15px;
+ gap: 3%;
+ aspect-ratio: 2/1;
+}
+
+.full-project-image{
+ width: 100%;
+ border-radius: 10px;
+
+}
+.half-project-image{
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  aspect-ratio: 1;
+}
+
+.project-row{
+  display: flex;
+  justify-content: center;
+  border: var(--test-border);
+  border-radius: 15px;
+  width: 100vw;
+  color: var(--my-black);
+  min-height: 300px;
+  padding-right: 15%;
+  padding-left: 15%;
+  gap: 5%;
+}
+
+@media (max-width: 730px) {
+  .project-row{
+    padding-right: 10%;
+    padding-left: 10%;
+    flex-direction: column;
+  }
 }
 
 .breaker{
@@ -473,7 +528,7 @@ svg{
 }
 
 .max-half{
- width: 55vw;
+ width: 45vw;
 }
 
 .no-shaodw{
@@ -543,23 +598,24 @@ svg{
 }
 
 .linebreaker{
-  height: 10px;
+  height:6px;
   width: auto;
   background-color: var(--main-color);
   border-radius: 25px;
   padding: 0px;
-  margin: 0;
+  margin-bottom: 5px;
   min-width: 400px;
 }
 h1{
-  font-size: 68px;
+  font-size: 42px;
   font-weight: 600;
   padding: 0px;
   margin: 0;
   color: var(--main-color);
 }
 h2{
-  font-size: 32px;
+
+  font-size: 24px;
   font-style: italic;
   font-weight: 200;
   padding: 0px;

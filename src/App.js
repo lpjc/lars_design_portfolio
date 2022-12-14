@@ -14,6 +14,8 @@ import ArcText from 'arc-text';
 import { Analytics } from '@vercel/analytics/react';
 
 import seaweedMockups from "./Data/Web Applicaiton/Seaweed.png"
+import umbraco10 from "./Data/Web Applicaiton/Umbraco10.png"
+import adeccosite1 from "./Data/Web Applicaiton/Adeccosite1.png"
 import cicadaOnStairs from "./Data/Phyical Prototyping/P1070048.JPG"
 import cicadaOnPost from "./Data/Phyical Prototyping/DSCF1499.JPG"
 import processWorkshop from "./Data/Misc/Process.jpg"
@@ -126,7 +128,7 @@ function populateLogos() {
   }
 }
 
-const larsLayers ={
+const larsLayers = {
 
 }
 
@@ -150,7 +152,7 @@ function App() {
   const [alertCount, setAlertCount] = useState(0)
   function underConstruction() {
     if (alertCount === 0) {
-      alert("Under construction, this is just a peak behind the curtain!")
+      alert("This is a development-build: just a peak, and not mobile friendly just yet")
       setAlertCount(1)
     }
   }
@@ -307,7 +309,7 @@ function App() {
             </div>
           </div>
 
-          <Breaker height="800px" />
+          <Breaker height="700px" />
 
           <div className='outer-container sidebyside'>
 
@@ -361,13 +363,13 @@ function App() {
             </div>
 
             <div className='inner-container bubble-container'>
-              <div className='bubble medium ' style={{ left: "68%", bottom: "0%", zIndex: "10" }}>
+              <div className='bubble medium ' style={{ height: "100%", left: "68%", bottom: "0%", zIndex: "10" }}>
                 <img className='bubble-image' alt='no load' src={larsSnakker} />
               </div>
-              <div className='bubble medium' style={{ left: "34%", bottom: "0%" }}>
-                <img className='bubble-image' alt='no load' src={neckerCube} style={{ height: "80%" }} />
+              <div className='bubble medium' style={{ height: "100%", left: "34%", bottom: "0%" }}>
+                <img className='bubble-image' alt='no load' src={neckerCube} style={{ height: "85%" }} />
               </div>
-              <div className='bubble medium ' style={{ left: "0%", bottom: "0%" }}>
+              <div className='bubble medium ' style={{ height: "100%", left: "0%", bottom: "0%" }}>
                 <img className='bubble-image' alt='no load' src={processWorkshop} />
               </div>
             </div>
@@ -375,91 +377,113 @@ function App() {
           </div>
         </div>
 
-
         <Breaker height="800px" />
+
         <div id='ProjectsHeader' className='header projectsheader row'>
-           Project<h1 style={{textShadow: "none", marginLeft: "20px"}}> highlights</h1>
-        </div>
-        <Breaker height="200px"/>
-        <div className='outer-container sidebyside'>
-
-          <div className='project-card-left column' style={{ textAlign: "right", paddingRight: "15px" }}>
-            <h1>Webcam Wizard</h1>
-            <div className='linebreaker'></div>
-            <h2>Proof-of-concept AI-powered web application</h2>
-          </div>
-
-          <div className='inner-container center-align background'>
-            <img className="shadow-image max-half" src={WWGif} alt="GIF not supported"></img>
-          </div>
-
+          Project<h1 style={{ textShadow: "none", marginLeft: "20px" }}> highlights</h1>
         </div>
 
-        <Breaker height="400px" />
+        <Breaker height="50px" />
 
-        <div className='outer-container sidebyside'>
-          <div className='project-card-left column' style={{ textAlign: "right", paddingRight: "15px" }}>
-            <h1> Cweed </h1>
-            <div className='linebreaker'></div>
-            <h2> High fidelity prototyping and user enagement</h2>
+        <div className='project-row'>
+          <div className='project-card'>
+
+            <div>
+              <h1> Webcam Wizard </h1>
+              <div className='linebreaker'></div>
+              <h2> Proof-of-concept: AI-powered web application </h2>
+            </div>
+
+            <div className='image-row'>
+              <img className='full-project-image ' src={WWGif} alt="GIF not supported"></img>
+            </div>
+
           </div>
 
-          <div className='inner-container center-align background'>
-            <img className="shadow-image max-half" src={seaweedMockups} alt="GIF not supported"></img>
-          </div>
-        </div>
+          <div className='project-card'>
 
-        <Breaker height="400px" />
-        <div className='outer-container'>
-          <div className='project-card-left column' style={{ textAlign: "right", paddingLeft: "140px" }}>
-            <h1>Cicada</h1>
-            <div className='linebreaker'></div>
-            <h2> Opensource audio graffiti </h2>
-          </div>
-          <div className='inner-container center-align background max-' >
-            <img className="shadow-image max-half" style={{ maxWidth: "28vw", maxHeight: "55vh", objectFit: "cover", marginRight: "2%" }}
-              src={cicadaOnPost} alt="GIF not supported"></img>
-            <img className="shadow-image max-half" style={{ maxWidth: "28vw", minHeight: "55vh", objectFit: "cover" }}
-              src={cicadaOnStairs} alt="GIF not supported"></img>
-          </div>
-        </div>
-        <Breaker height="900px" />
-        <div className='outer-container sidebyside'>
-          <div className='inner-container center-align bubble-container3'>
-            <div className='image-container'>
-              <img className="standard-image" src={ideationProcess2} alt="GIF not supported"></img>
+            <div>
+              <h1> Cweed</h1>
+              <div className='linebreaker'></div>
+              <h2> High fidelity prototyping and user enagement </h2>
             </div>
-            <div id="startBubble" className='text-bubble nofilter border' style={{ textAlign: "center", top: "-40%" }}>
-              Ideate & <br /> Collaborate
-            </div>
-          </div>
 
-
-          <div className='inner-container center-align bubble-container3'>
-            <div className='image-container'>
-              <img className="standard-image" src={cicadaPrototype} alt="GIF not supported"></img>
+            <div className='image-row'>
+              <img className='full-project-image' src={seaweedMockups} alt="GIF not supported"></img>
             </div>
-            <div id="middleBubble" className='text-bubble nofilter border' style={{ textAlign: "center", top: "70%" }}>
-              Prototype <br /> & Test
-            </div>
-          </div>
-
-          <div className='inner-container center-align bubble-container3'>
-            <div className='image-container'>
-              <img className="standard-image" src={cicadaBeam} alt="GIF not supported"></img>
-            </div>
-            <div id="endBubble" className='text-bubble nofilter border' style={{ top: "-40%", zIndex: "2" }}>
-              Design Growth
-            </div>
-            <div className='text-bubble nofilter pulse2' style={{ top: "-40%", zIndex: "1" }} />
 
           </div>
         </div>
-        <Breaker height="800px" />
+
+        <Breaker height="50px"/>
+
+        <div className='project-row'>
+        <div className='project-card'>
+            <div>
+              <h1>Cicada</h1>
+              <div className='linebreaker'></div>
+              <h2> Audio graffiti designed for open source manufacturing </h2>
+            </div>
+
+            <div className='image-row'>
+              <img className='half-project-image' src={cicadaOnPost} alt="GIF not supported"></img>
+              <img className='half-project-image' src={cicadaOnStairs} alt="GIF not supported" style={{}}></img>
+            </div>
+          </div>
+          <div className='project-card'>
+            <div>
+              <h1> Adecco.dk CMS </h1>
+              <div className='linebreaker'></div>
+              <h2> Umbraco10, UX Writing and Design QC </h2>
+            </div>
+
+            <div className='image-row'>
+              <img className='half-project-image' style={{translate:""}} src={adeccosite1} alt="GIF not supported"></img>
+              <img className='half-project-image' src={umbraco10} alt="GIF not supported"></img>
+            </div>
+          </div>
+        </div>
+        <Breaker height="450px" />
+ 
+
+ <div className='outer-container sidebyside'>
+   <div className='inner-container center-align bubble-container3'>
+     <div className='image-container'>
+       <img className="standard-image" src={ideationProcess2} alt="GIF not supported"></img>
+     </div>
+     <div id="startBubble" className='text-bubble nofilter border' style={{ textAlign: "center", top: "-40%" }}>
+       Ideate & <br /> Collaborate
+     </div>
+   </div>
+
+
+   <div className='inner-container center-align bubble-container3'>
+     <div className='image-container'>
+       <img className="standard-image" src={cicadaPrototype} alt="GIF not supported"></img>
+     </div>
+     <div id="middleBubble" className='text-bubble nofilter border' style={{ textAlign: "center", top: "70%" }}>
+       Prototype <br /> & Test
+     </div>
+   </div>
+
+   <div className='inner-container center-align bubble-container3'>
+     <div className='image-container'>
+       <img className="standard-image" src={cicadaBeam} alt="GIF not supported"></img>
+     </div>
+     <div id="endBubble" className='text-bubble nofilter border' style={{ top: "-40%", zIndex: "2" }}>
+       Design Growth
+     </div>
+     <div className='text-bubble nofilter pulse2' style={{ top: "-40%", zIndex: "1" }} />
+
+   </div>
+ </div>
+
         <div className='outer-container'>
           Double Diamnd here
         </div>
+
         <Breaker height="100px" />
+
         <div className='outer-container sidebyside'>
           <div className='inner-container text-card right-align'>Tekst </div>
           <div className='mosaic-container row'>
@@ -479,6 +503,7 @@ function App() {
             </div>
           </div>
         </div>
+
       </ParallaxProvider>
     </div>
   );
