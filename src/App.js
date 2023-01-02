@@ -151,7 +151,7 @@ function App() {
   const [alertCount, setAlertCount] = useState(0)
   function underConstruction() {
     if (alertCount === 0) {
-      alert("This is a development-build: just a peak, and not mobile friendly just yet")
+      alert("This is a working prototype-build; nothing more")
       setAlertCount(1)
     }
   }
