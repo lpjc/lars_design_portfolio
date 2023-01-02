@@ -132,7 +132,6 @@ const larsLayers = {
 
 }
 
-
 document.addEventListener('DOMContentLoaded', function () {
   setTimeout(function () {
     var startElement = document.getElementById("startBubble"),
@@ -157,6 +156,18 @@ function App() {
     }
   }
 
+
+  if(window.innerWidth < 900 || window.innerHeight < 800 ){
+    return (
+      <div>
+        Not suited for mobile <br/>     
+        Visit again on desktop, or find me on <a href='https://www.linkedin.com/in/larsudraabstegn/'>LinkedIn</a>.<br/>
+        Mobile is in the works, ETA feb 2023. 
+      </div>
+    )
+  }
+
+  
   return (
     <div className="wrapper">
       <ParallaxProvider>
@@ -232,45 +243,6 @@ function App() {
           </svg>
         </div>
         <Breaker height="800px" />
-
-        {/* <div className='outer-container' style={{display: "flex", justifyContent:"center", alignItems:"center", height: "800px"}}>
-          <div className='layer1 parrallax-breaker'>
-            <Parallax translateY={[80, -80]}>
-              <div className='parrallax-div-small'></div>
-              <div className='parrallax-div-small'></div>
-              <div className='parrallax-div-small'></div>
-              <div className='parrallax-div-small'></div>
-              <div className='parrallax-div-small'></div>
-              <div className='parrallax-div-small'></div>
-              <div className='parrallax-div-small'></div>
-              <div className='parrallax-div-small'></div>
-              <div className='parrallax-div-small'></div>
-            </Parallax>
-          </div>
-          <div className='layer2 parrallax-breaker'> 
-            <Parallax translateY={[-30, 10]}>
-              <div className='parrallax-div-medium'></div>
-              <div className='parrallax-div-medium'></div>
-              <div className='parrallax-div-medium'></div>
-              <div className='parrallax-div-medium'></div>
-              <div className='parrallax-div-medium'></div>
-              <div className='parrallax-div-medium'></div>
-              <div className='parrallax-div-medium'></div>
-            </Parallax>
-          </div>
-          <div className='layer3 parrallax-breaker'>    
-            <Parallax translateY={[-10, 30]}>
-              <div className='parrallax-div-large'></div>
-              <div className='parrallax-div-large'></div>
-              <div className='parrallax-div-large'></div>
-              <div className='parrallax-div-large'></div>
-              <div className='parrallax-div-large'></div>
-              <div className='parrallax-div-large'></div>
-            </Parallax>
-          </div>
-        </div> */}
-
-
         <div id="About Section" className='aboutSection'>
           <div id='AboutHeader' className='header aboutheader'>
             ABOUT
@@ -507,6 +479,7 @@ function App() {
       </ParallaxProvider>
     </div>
   );
+
 }
 
 export default App;
